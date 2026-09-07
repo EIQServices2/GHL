@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowRight, Headphones } from "lucide-react";
 import { t } from "@/lib/i18n";
 import { useCountUp } from "@/lib/useCountUp";
@@ -25,8 +24,13 @@ function Stat({ value, label }: { value: number; label: string }) {
 /**
  * Home hero: headline + 4 animated count-up stats + 2 CTAs.
  * Matches powerrateindex.org hero (CountUp animation).
+ * Both CTAs smooth-scroll to the contact form (#contact).
  */
 export function HomeHero({ stats }: HomeHeroProps) {
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="w-full bg-white py-12">
       <div className="mx-auto max-w-[1440px] px-4 text-center">
@@ -42,20 +46,22 @@ export function HomeHero({ stats }: HomeHeroProps) {
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Link
-            href="/contact-us"
-            className="inline-flex items-center gap-2 rounded border border-[#6c757d] px-6 py-2.5 text-sm font-semibold text-[#6c757d]"
+          <button
+            type="button"
+            onClick={scrollToContact}
+            className="inline-flex cursor-pointer items-center gap-2 rounded border border-[#6c757d] px-6 py-2.5 text-sm font-semibold text-[#6c757d]"
           >
             <Headphones className="h-4 w-4" />
             {t("home.talkToSales")}
-          </Link>
-          <Link
-            href="/contact-us"
-            className="inline-flex items-center gap-2 rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white"
+          </button>
+          <button
+            type="button"
+            onClick={scrollToContact}
+            className="inline-flex cursor-pointer items-center gap-2 rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white"
           >
             {t("home.getStarted")}
             <ArrowRight className="h-4 w-4" />
-          </Link>
+          </button>
         </div>
       </div>
     </section>

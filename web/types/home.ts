@@ -1,3 +1,5 @@
+import type { Utility } from "./utility";
+
 export interface HomeStats {
   totalStates: number;
   totalUtilities: number;
@@ -26,4 +28,5 @@ export interface HomePageData {
   states: StateOption[];
   tduRates: TduRate[];
   featureCards: FeatureCard[];
+  utilities: Utility[];
 }

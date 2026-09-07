@@ -38,7 +38,10 @@ export function getRateChange(slug: string): RateChange | null {
 }
 
 export function getHomeData(): HomePageData {
-  return homeData as HomePageData;
+  return {
+    ...(homeData as Omit<HomePageData, "utilities">),
+    utilities,
+  };
 }
 
 export function getPageData(slug: string): RateChangePageData | null {

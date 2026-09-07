@@ -6,6 +6,7 @@ import { HomeScrape } from "@/sections/HomeScrape";
 import { HomeFeatures } from "@/sections/HomeFeatures";
 import { HomePlatform } from "@/sections/HomePlatform";
 import { HomeContact } from "@/sections/HomeContact";
+import { UtilityLinksSection } from "@/sections/UtilityLinksSection";
 import { FooterSection } from "@/sections/FooterSection";
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default function HomePage() {
       <HomeFeatures cards={data.featureCards} />
       <HomePlatform states={data.states} tduRates={data.tduRates} />
       <HomeContact />
+      <UtilityLinksSection utilities={data.utilities} />
       <FooterSection />
     </main>
   );

@@ -61,6 +61,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "home.formSubmit": "Submit",
     "home.formSuccess": "Submit Successfully!",
     "home.formSuccessBody": "We will contact you ASAP.",
+    "home.utilityLinksTitle": "Explore Utility Rate Changes",
 
     // Form
     "form.emailPlaceholder": "Enter your email",
@@ -79,6 +80,10 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // Common
     "common.loading": "Loading…",
+
+    // 404
+    "notFound.title": "Page not found",
+    "notFound.home": "Back to Home",
   },
 };
 

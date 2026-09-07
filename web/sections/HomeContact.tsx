@@ -7,7 +7,7 @@ import { ContactForm } from "@/components/ContactForm";
  */
 export function HomeContact() {
   return (
-    <section className="w-full bg-[#F2F7FA] py-12">
+    <section id="contact" className="w-full bg-[#F2F7FA] py-12">
       <div className="mx-auto max-w-2xl px-4 text-center">
         <h2 className="text-2xl font-bold text-[#121f27] md:text-3xl">
           {t("home.contactTitle")}

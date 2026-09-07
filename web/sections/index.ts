@@ -16,3 +16,4 @@ export { HomeScrape } from "./HomeScrape";
 export { HomeFeatures, type HomeFeaturesProps } from "./HomeFeatures";
 export { HomePlatform, type HomePlatformProps } from "./HomePlatform";
 export { HomeContact } from "./HomeContact";
+export { UtilityLinksSection, type UtilityLinksSectionProps } from "./UtilityLinksSection";
