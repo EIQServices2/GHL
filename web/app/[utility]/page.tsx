@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getPageData, getUtilitySlugs } from "@/lib/data";
-import type { UtilitySlug } from "@/types";
+import { t } from "@/lib/i18n";
 import { HeaderSection } from "@/sections/HeaderSection";
 import { HeroSection } from "@/sections/HeroSection";
 import { RateComparisonSection } from "@/sections/RateComparisonSection";
@@ -9,7 +9,7 @@ import { WhyItMattersSection } from "@/sections/WhyItMattersSection";
 import { TrialFormSection } from "@/sections/TrialFormSection";
 import { FooterSection } from "@/sections/FooterSection";
 
-export function generateStaticParams(): { utility: UtilitySlug }[] {
+export function generateStaticParams(): { utility: string }[] {
   return getUtilitySlugs().map((slug) => ({ utility: slug }));
 }
 
@@ -24,8 +24,12 @@ export async function generateMetadata({
 
   const name = data.rateChange.utility.name;
   return {
-    title: `${name} TDU Delivery Rates Just Changed`,
-    description: `${name} TDU delivery rates just changed. Previous ${data.rateChange.previousRate}¢/kWh → current ${data.rateChange.currentRate}¢/kWh. Stay on top of utility rate updates with PowerRateIndex.`,
+    title: t("meta.utilityTitle", "en", { name }),
+    description: t("meta.utilityDescription", "en", {
+      name,
+      previous: data.rateChange.previousRate,
+      current: data.rateChange.currentRate,
+    }),
     alternates: { canonical: `/${utility}` },
   };
 }

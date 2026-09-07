@@ -1,13 +1,5 @@
-export type UtilitySlug =
-  | "oncor"
-  | "centerpoint"
-  | "aepnorth"
-  | "aepcentral"
-  | "tnmp"
-  | "lubbock";
-
 export interface Utility {
-  slug: UtilitySlug;
+  slug: string;
   name: string;
   code: string;
 }

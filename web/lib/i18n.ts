@@ -1,8 +1,9 @@
-export const locales = ["en"] as const;
+export const locales = ["en", "es"] as const;
 export type Locale = (typeof locales)[number];
 
 export const localeNames: Record<Locale, string> = {
   en: "English",
+  es: "Español",
 };
 
 export const translations: Record<Locale, Record<string, string>> = {
@@ -18,9 +19,9 @@ export const translations: Record<Locale, Record<string, string>> = {
     "rateChange.whyItMatters": "Why It Matters",
     "rateChange.whyItMattersBody":
       "Fluctuations in TDU rates can directly impact your total electricity costs. PowerRateIndex keeps you informed — automatically.",
-    "rateChange.valueProp1": "✅ Track all TDU delivery rate updates",
-    "rateChange.valueProp2": "✅ Compare competitor pricing in one dashboard",
-    "rateChange.valueProp3": "✅ Get alerts when rates shift or new offers appear",
+    "rateChange.valueProp1": "Track all TDU delivery rate updates",
+    "rateChange.valueProp2": "Compare competitor pricing in one dashboard",
+    "rateChange.valueProp3": "Get alerts when rates shift or new offers appear",
     "rateChange.experienceFree": "EXPERIENCE IT FOR FREE",
     "rateChange.startMonitoring": "Start monitoring smarter today.",
     "rateChange.cta": "Start 30-day free trial",
@@ -84,9 +85,122 @@ export const translations: Record<Locale, Record<string, string>> = {
     // 404
     "notFound.title": "Page not found",
     "notFound.home": "Back to Home",
+
+    // Metadata
+    "meta.title": "PowerRateIndex | Retail Energy Pricing & Competitive Analysis",
+    "meta.titleTemplate": "%s | PowerRateIndex",
+    "meta.description":
+      "Powerful tool for retail energy pricing and competitive analysis. Residential electricity market and plan data for the retail energy industry.",
+    "meta.siteName": "PowerRateIndex",
+    "meta.ogDescription":
+      "Powerful tool for retail energy pricing and competitive analysis.",
+    "meta.utilityTitle": "{name} TDU Delivery Rates Just Changed",
+    "meta.utilityDescription":
+      "{name} TDU delivery rates just changed. Previous {previous}¢/kWh → current {current}¢/kWh. Stay on top of utility rate updates with PowerRateIndex.",
+  },
+  es: {
+    // Rate change page
+    "rateChange.title": "Las tarifas de entrega de TDU acaban de cambiar",
+    "rateChange.seeHow": "Vea cómo le afecta.",
+    "rateChange.subtitle":
+      "Manténgase al día con las actualizaciones de tarifas de entrega de servicios públicos y los cambios de precios de la competencia con PowerRateIndex.",
+    "rateChange.previousRate": "Tarifa anterior",
+    "rateChange.currentRate": "Actual",
+    "rateChange.updatedAsOf": "Actualizado a partir de",
+    "rateChange.whyItMatters": "Por qué es importante",
+    "rateChange.whyItMattersBody":
+      "Las fluctuaciones en las tarifas de TDU pueden afectar directamente sus costos totales de electricidad. PowerRateIndex lo mantiene informado, automáticamente.",
+    "rateChange.valueProp1": "Rastree todas las actualizaciones de tarifas de entrega de TDU",
+    "rateChange.valueProp2": "Compare los precios de la competencia en un solo panel",
+    "rateChange.valueProp3": "Reciba alertas cuando las tarifas cambien o aparezcan nuevas ofertas",
+    "rateChange.experienceFree": "PRUÉBELO GRATIS",
+    "rateChange.startMonitoring": "Comience a monitorear de forma más inteligente hoy.",
+    "rateChange.cta": "Comience la prueba gratuita de 30 días",
+
+    // Home page
+    "home.login": "Iniciar sesión",
+    "home.heroTitle":
+      "Datos de planes y mercado de electricidad residencial para la industria de energía minorista",
+    "home.statStates": "Estados totales",
+    "home.statUtilities": "Servicios públicos totales",
+    "home.statSuppliers": "Proveedores totales",
+    "home.statPlans": "Planes totales",
+    "home.talkToSales": "Hablar con ventas",
+    "home.getStarted": "Comenzar",
+    "home.scrapeTitle":
+      "PowerRateIndex extrae continuamente de internet para recopilar los datos de planes de electricidad residencial más completos, oportunos y precisos disponibles",
+    "home.scrapeBullet1": "Todos los mercados y planes se extraen al menos una vez al día",
+    "home.scrapeBullet2":
+      "Nuestra IA calcula la tarifa efectiva para cualquier estructura de plan, incluidos los planes escalonados y TOU",
+    "home.scrapeBullet3":
+      "Monitorea y actualiza continuamente el precio de comparación de los servicios públicos",
+    "home.featuresTitle":
+      "PowerRateIndex es una herramienta fundamental para tomar decisiones efectivas de precios, ventas y marketing",
+    "home.platformTitle": "Plataforma de inteligencia de precios de energía",
+    "home.platformSubtitle":
+      "Nuestra plataforma se actualiza diariamente, garantizando información en tiempo real sobre precios competitivos, ayudando a las empresas a optimizar sus estrategias y mantenerse a la vanguardia en el mercado energético en evolución",
+    "home.avgRate": "Tarifa promedio",
+    "home.avgRateByTdu": "Tarifa promedio de hoy por TDU basada en 1000 kWh",
+    "home.avgRateByUtility": "Tarifa promedio de hoy por servicio público",
+    "home.contactTitle": "Explore el futuro del análisis de precios de energía",
+    "home.contactSubtitle":
+      "¿Listo para tomar decisiones informadas con datos de precios de energía confiables y completos?",
+    "home.formFirstName": "Nombre",
+    "home.formLastName": "Apellido",
+    "home.formCompany": "Empresa",
+    "home.formEmail": "Correo electrónico",
+    "home.formMessage": "Mensaje",
+    "home.formSubmit": "Enviar",
+    "home.formSuccess": "¡Enviado correctamente!",
+    "home.formSuccessBody": "Nos pondremos en contacto contigo lo antes posible.",
+    "home.utilityLinksTitle": "Explore los cambios de tarifas de servicios públicos",
+
+    // Form
+    "form.emailPlaceholder": "Ingrese su correo electrónico",
+
+    // Footer
+    "footer.rights": "2025 © EIQdigital. Todos los derechos reservados.",
+    "footer.tagline1": "Líder en IA, datos y tecnología.",
+    "footer.tagline2":
+      "Impulsando la transición digital y de sostenibilidad de la industria energética.",
+    "footer.products": "Productos",
+    "footer.support": "Soporte y contacto",
+    "footer.developers": "Desarrolladores",
+    "footer.followUs": "Síguenos en",
+    "footer.contactUs": "Contáctenos",
+    "footer.documentation": "Documentación",
+
+    // Common
+    "common.loading": "Cargando…",
+
+    // 404
+    "notFound.title": "Página no encontrada",
+    "notFound.home": "Volver al inicio",
+
+    // Metadata
+    "meta.title": "PowerRateIndex | Precios de energía minorista y análisis competitivo",
+    "meta.titleTemplate": "%s | PowerRateIndex",
+    "meta.description":
+      "Herramienta poderosa para precios de energía minorista y análisis competitivo. Datos de planes y mercado de electricidad residencial para la industria de energía minorista.",
+    "meta.siteName": "PowerRateIndex",
+    "meta.ogDescription":
+      "Herramienta poderosa para precios de energía minorista y análisis competitivo.",
+    "meta.utilityTitle": "{name} Las tarifas de entrega de TDU acaban de cambiar",
+    "meta.utilityDescription":
+      "Las tarifas de entrega de TDU de {name} acaban de cambiar. Anterior {previous}¢/kWh → actual {current}¢/kWh. Manténgase al día con las actualizaciones de tarifas de servicios públicos con PowerRateIndex.",
   },
 };
 
-export function t(key: string, locale: Locale = "en"): string {
-  return translations[locale]?.[key] ?? key;
+export function t(
+  key: string,
+  locale: Locale = "en",
+  vars?: Record<string, string | number>
+): string {
+  let s = translations[locale]?.[key] ?? key;
+  if (vars) {
+    for (const [k, v] of Object.entries(vars)) {
+      s = s.replaceAll(`{${k}}`, String(v));
+    }
+  }
+  return s;
 }

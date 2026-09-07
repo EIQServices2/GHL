@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { t } from "@/lib/i18n";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -18,11 +19,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "PowerRateIndex | Retail Energy Pricing & Competitive Analysis",
-    template: "%s | PowerRateIndex",
+    default: t("meta.title"),
+    template: t("meta.titleTemplate"),
   },
-  description:
-    "Powerful tool for retail energy pricing and competitive analysis. Residential electricity market and plan data for the retail energy industry.",
+  description: t("meta.description"),
   keywords: [
     "retail energy",
     "electricity pricing",
@@ -38,16 +38,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: SITE_URL,
-    siteName: "PowerRateIndex",
-    title: "PowerRateIndex | Retail Energy Pricing & Competitive Analysis",
-    description:
-      "Powerful tool for retail energy pricing and competitive analysis.",
+    siteName: t("meta.siteName"),
+    title: t("meta.title"),
+    description: t("meta.ogDescription"),
   },
   twitter: {
     card: "summary_large_image",
-    title: "PowerRateIndex | Retail Energy Pricing & Competitive Analysis",
-    description:
-      "Powerful tool for retail energy pricing and competitive analysis.",
+    title: t("meta.title"),
+    description: t("meta.ogDescription"),
   },
   robots: {
     index: true,

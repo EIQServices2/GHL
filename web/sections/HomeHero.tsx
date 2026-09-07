@@ -3,6 +3,7 @@
 import { ArrowRight, Headphones } from "lucide-react";
 import { t } from "@/lib/i18n";
 import { useCountUp } from "@/lib/useCountUp";
+import { Button } from "@/elements/Button";
 import type { HomeStats } from "@/types/home";
 
 export interface HomeHeroProps {
@@ -16,7 +17,7 @@ function Stat({ value, label }: { value: number; label: string }) {
       <p className="text-4xl font-semibold text-pri-purple md:text-5xl">
         {display}
       </p>
-      <p className="mt-1 text-sm text-[#666]">{t(label)}</p>
+      <p className="mt-1 text-sm text-pri-ink-muted">{t(label)}</p>
     </div>
   );
 }
@@ -34,7 +35,7 @@ export function HomeHero({ stats }: HomeHeroProps) {
   return (
     <section className="w-full bg-white py-12">
       <div className="mx-auto max-w-[1440px] px-4 text-center">
-        <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-tight text-[#121f27] md:text-5xl">
+        <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-tight text-pri-ink md:text-5xl">
           {t("home.heroTitle")}
         </h1>
 
@@ -46,22 +47,21 @@ export function HomeHero({ stats }: HomeHeroProps) {
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button
-            type="button"
+          <Button
+            variant="outline"
             onClick={scrollToContact}
-            className="inline-flex cursor-pointer items-center gap-2 rounded border border-[#6c757d] px-6 py-2.5 text-sm font-semibold text-[#6c757d]"
+            className="inline-flex items-center gap-2 rounded border-pri-border-mid px-6 py-2.5 text-sm font-semibold text-pri-border-mid"
           >
             <Headphones className="h-4 w-4" />
             {t("home.talkToSales")}
-          </button>
-          <button
-            type="button"
+          </Button>
+          <Button
             onClick={scrollToContact}
-            className="inline-flex cursor-pointer items-center gap-2 rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white"
+            className="inline-flex items-center gap-2 rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white"
           >
             {t("home.getStarted")}
             <ArrowRight className="h-4 w-4" />
-          </button>
+          </Button>
         </div>
       </div>
     </section>

@@ -34,10 +34,22 @@
   --color-pri-navy: var(--pri-navy);
   --color-pri-blue: var(--pri-blue);
   --color-pri-purple: var(--pri-purple);
+  --color-pri-lavender: var(--pri-lavender);
   --color-pri-surface: var(--pri-surface);
   --color-pri-footer-text: var(--pri-footer-text);
   --color-pri-muted: var(--pri-muted);
   --color-pri-header: var(--pri-header);
+  --color-pri-dark: var(--pri-dark);
+
+  /* Home page (powerrateindex.org) tokens */
+  --color-pri-ink: var(--pri-ink);
+  --color-pri-ink-muted: var(--pri-ink-muted);
+  --color-pri-ink-faint: var(--pri-ink-faint);
+  --color-pri-border: var(--pri-border);
+  --color-pri-border-mid: var(--pri-border-mid);
+  --color-pri-fill: var(--pri-fill);
+  --color-pri-bg-light: var(--pri-bg-light);
+  --color-pri-bg-grey: var(--pri-bg-grey);
 }
 
 :root {
@@ -65,10 +77,22 @@
   --pri-navy: #221a76; /* hero + CTA section background */
   --pri-blue: #188bf6; /* checkmarks */
   --pri-purple: #624bff; /* current rate + CTA button */
+  --pri-lavender: #c4c4e3; /* hero second-line + eyebrow text */
   --pri-surface: #f1f4fa; /* footer background */
   --pri-footer-text: #252525; /* footer text */
   --pri-muted: #8893a8; /* muted text */
   --pri-header: #ffffffe6; /* header/nav background (white 90%) */
+  --pri-dark: #313131; /* body text (GHL) */
+
+  /* Home page (powerrateindex.org) tokens */
+  --pri-ink: #121f27; /* primary dark text */
+  --pri-ink-muted: #666666; /* muted text */
+  --pri-ink-faint: #999999; /* faint text */
+  --pri-border: #e5e5e5; /* light border */
+  --pri-border-mid: #6c757d; /* mid grey border/text */
+  --pri-fill: #e9ecef; /* chart track fill */
+  --pri-bg-light: #f2f7fa; /* light section background */
+  --pri-bg-grey: #f8f9fa; /* grey section background */
 }
 
 @layer base {

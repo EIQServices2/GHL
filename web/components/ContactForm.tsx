@@ -17,10 +17,10 @@ export function ContactForm({ onSubmitted }: ContactFormProps) {
   if (submitted) {
     return (
       <div className="text-center">
-        <p className="text-lg font-semibold text-[#121f27]">
+        <p className="text-lg font-semibold text-pri-ink">
           {t("home.formSuccess")}
         </p>
-        <p className="mt-2 text-[15px] text-[#666]">
+        <p className="mt-2 text-[15px] text-pri-ink-muted">
           {t("home.formSuccessBody")}
         </p>
       </div>
@@ -38,52 +38,57 @@ export function ContactForm({ onSubmitted }: ContactFormProps) {
     >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
-          <label className="mb-1 block text-sm text-[#666]">
+          <label htmlFor="contact-first-name" className="mb-1 block text-sm text-pri-ink-muted">
             {t("home.formFirstName")}
           </label>
           <input
+            id="contact-first-name"
             type="text"
             required
-            className="w-full rounded border border-[#e5e5e5] px-3 py-2 text-sm"
+            className="w-full rounded border border-pri-border px-3 py-2 text-sm"
           />
         </div>
         <div>
-          <label className="mb-1 block text-sm text-[#666]">
+          <label htmlFor="contact-last-name" className="mb-1 block text-sm text-pri-ink-muted">
             {t("home.formLastName")}
           </label>
           <input
+            id="contact-last-name"
             type="text"
             required
-            className="w-full rounded border border-[#e5e5e5] px-3 py-2 text-sm"
+            className="w-full rounded border border-pri-border px-3 py-2 text-sm"
           />
         </div>
       </div>
       <div className="mt-4">
-        <label className="mb-1 block text-sm text-[#666]">
+        <label htmlFor="contact-company" className="mb-1 block text-sm text-pri-ink-muted">
           {t("home.formCompany")}
         </label>
         <input
+          id="contact-company"
           type="text"
-          className="w-full rounded border border-[#e5e5e5] px-3 py-2 text-sm"
+          className="w-full rounded border border-pri-border px-3 py-2 text-sm"
         />
       </div>
       <div className="mt-4">
-        <label className="mb-1 block text-sm text-[#666]">
+        <label htmlFor="contact-email" className="mb-1 block text-sm text-pri-ink-muted">
           {t("home.formEmail")}
         </label>
         <input
+          id="contact-email"
           type="email"
           required
-          className="w-full rounded border border-[#e5e5e5] px-3 py-2 text-sm"
+          className="w-full rounded border border-pri-border px-3 py-2 text-sm"
         />
       </div>
       <div className="mt-4">
-        <label className="mb-1 block text-sm text-[#666]">
+        <label htmlFor="contact-message" className="mb-1 block text-sm text-pri-ink-muted">
           {t("home.formMessage")}
         </label>
         <textarea
+          id="contact-message"
           rows={4}
-          className="w-full rounded border border-[#e5e5e5] px-3 py-2 text-sm"
+          className="w-full rounded border border-pri-border px-3 py-2 text-sm"
         />
       </div>
       <button

@@ -25,7 +25,7 @@ export function TrialFormSection({ cta }: TrialFormSectionProps) {
       <div className="mx-auto max-w-3xl px-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-[3fr_2fr] md:items-center">
           <div className="text-left">
-            <h2 className="text-sm font-normal uppercase leading-[2] tracking-[2px] text-[#C4C4E3]">
+            <h2 className="text-sm font-normal uppercase leading-[2] tracking-[2px] text-pri-lavender">
               {t("rateChange.experienceFree")}
             </h2>
             <h3 className="mt-2 text-5xl font-bold leading-[1.2] tracking-[-1px] text-white">

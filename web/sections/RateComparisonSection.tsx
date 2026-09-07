@@ -22,7 +22,7 @@ export function RateComparisonSection({
   return (
     <section className="w-full py-12">
       <div className="mx-auto max-w-3xl px-6">
-        <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4">
+        <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-[1fr_auto_1fr]">
           <RateCard
             label={t("rateChange.previousRate")}
             value={formatRate(rateChange.previousRate)}
@@ -32,7 +32,7 @@ export function RateComparisonSection({
             alt=""
             width={527}
             height={527}
-            className="h-8 w-8"
+            className="mx-auto h-8 w-8 rotate-0 md:rotate-0"
           />
           <RateCard
             label={`${t("rateChange.updatedAsOf")} ${rateChange.updatedAsOf}`}
