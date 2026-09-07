@@ -1,5 +1,12 @@
-import type { RateChange, Utility, UtilitySlug, RateChangePageData } from "@/types";
+import type {
+  RateChange,
+  Utility,
+  UtilitySlug,
+  RateChangePageData,
+} from "@/types";
+import type { HomePageData } from "@/types/home";
 import utilitiesData from "@/data/utilities.json";
+import homeData from "@/data/home.json";
 import aepcentral from "@/data/rate-changes/aepcentral.json";
 import aepnorth from "@/data/rate-changes/aepnorth.json";
 import centerpoint from "@/data/rate-changes/centerpoint.json";
@@ -28,6 +35,10 @@ export function getUtilitySlugs(): UtilitySlug[] {
 
 export function getRateChange(slug: string): RateChange | null {
   return rateChanges[slug] ?? null;
+}
+
+export function getHomeData(): HomePageData {
+  return homeData as HomePageData;
 }
 
 export function getPageData(slug: string): RateChangePageData | null {

@@ -1,25 +1,24 @@
-import Link from "next/link";
-import { getUtilities } from "@/lib/data";
+import { getHomeData } from "@/lib/data";
+import { HomeHeader } from "@/sections/HomeHeader";
+import { HomeHero } from "@/sections/HomeHero";
+import { HomeScrape } from "@/sections/HomeScrape";
+import { HomeFeatures } from "@/sections/HomeFeatures";
+import { HomePlatform } from "@/sections/HomePlatform";
+import { HomeContact } from "@/sections/HomeContact";
+import { FooterSection } from "@/sections/FooterSection";
 
 export default function HomePage() {
-  const utilities = getUtilities();
+  const data = getHomeData();
 
   return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-6 px-6 py-16">
-      <h1 className="text-3xl font-bold text-pri-body">PowerRateIndex</h1>
-      <p className="text-pri-muted">TDU delivery rate updates</p>
-      <ul className="grid gap-3 sm:grid-cols-2">
-        {utilities.map((u) => (
-          <li key={u.slug}>
-            <Link
-              href={`/${u.slug}`}
-              className="block rounded-lg border border-border bg-card px-6 py-4 text-pri-body transition-colors hover:border-pri-blue hover:text-pri-blue"
-            >
-              {u.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <main className="flex flex-1 flex-col">
+      <HomeHeader />
+      <HomeHero stats={data.stats} />
+      <HomeScrape />
+      <HomeFeatures cards={data.featureCards} />
+      <HomePlatform states={data.states} tduRates={data.tduRates} />
+      <HomeContact />
+      <FooterSection />
     </main>
   );
 }

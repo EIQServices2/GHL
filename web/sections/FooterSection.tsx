@@ -1,45 +1,185 @@
 import Image from "next/image";
+import Link from "next/link";
 import { t } from "@/lib/i18n";
-import type { FooterConfig } from "@/types";
 
-export interface FooterSectionProps {
-  footer: FooterConfig;
-}
+const products = [
+  { label: "PowerLego", href: "https://www.powerlego.com/" },
+  { label: "EIQhome", href: "https://eiqhome.com/" },
+  { label: "EIQShopping", href: "https://eiqshopping.com/" },
+  { label: "ESIID.io", href: "https://esiid.io/" },
+  { label: "BillReader", href: "https://www.billreader.com/" },
+  { label: "Personalized.Energy", href: "https://www.personalized.energy/" },
+];
 
 /**
- * Footer section: light background (#F1F4FA), dark text, two columns —
- * logo (180px) + copyright (left), "Powered by EIQdigital" badge (164px) +
- * two-line tagline (right). Matches GHL section-I1KZBFhshM.
+ * Ditto footer from powerrateindex.org (#uni-ft). White bg, 4 columns:
+ * Products / Support & Contact / Developers / Follow us on, plus logo,
+ * AWS badge, eIQdigital logo + tagline, and copyright bar.
  */
-export function FooterSection({ footer }: FooterSectionProps) {
+export function FooterSection() {
   return (
-    <footer className="w-full bg-pri-surface py-8">
-      <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-6 sm:flex-row sm:items-start sm:justify-between">
-        <div className="flex flex-col items-center gap-3 sm:items-start">
-          <Image
-            src="/images/logo-powerrateindex.png"
-            alt="Power Rate Index"
-            width={1406}
-            height={174}
-            className="h-auto w-[180px]"
-          />
-          <p className="text-sm text-[#3d3d3d] opacity-50">
-            {footer.copyright}
-          </p>
-        </div>
-        <div className="flex flex-col items-center gap-3 sm:items-end">
-          <Image
-            src="/images/badge-eiqdigital.png"
-            alt="Powered by EIQdigital"
-            width={486}
-            height={161}
-            className="h-auto w-[164px]"
-          />
-          <div className="text-center text-sm leading-[1.5] text-pri-footer-text sm:text-right">
-            <p>{t("footer.tagline1")}</p>
-            <p>{t("footer.tagline2")}</p>
+    <footer className="w-full bg-white py-[50px] text-[#121f27]">
+      <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-8 px-4 md:grid-cols-[1fr_2fr]">
+        {/* Left: logo + AWS + eIQdigital */}
+        <div className="flex flex-col gap-8">
+          <div className="flex items-center">
+            <Link href="/" aria-label="Power Rate Index home">
+              <Image
+                src="/images/logo-dark.png"
+                alt="Power Rate Index"
+                width={180}
+                height={30}
+                className="h-[30px] w-auto"
+              />
+            </Link>
+          </div>
+          <div>
+            <a
+              href="https://aws.amazon.com/what-is-cloud-computing"
+              target="_blank"
+              rel="noopener"
+            >
+              <Image
+                src="/images/powered-by-aws.png"
+                alt="Powered by AWS Cloud Computing"
+                width={100}
+                height={40}
+                className="h-auto w-[100px]"
+              />
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://www.eiqdigital.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              <Image
+                src="/images/eiqdigital-logo.png"
+                alt="eIQdigital"
+                width={160}
+                height={40}
+                className="h-[40px] w-auto"
+              />
+            </a>
+            <p className="mt-3 text-[15px] text-[#666]">
+              {t("footer.tagline1")}
+            </p>
+            <p className="mt-1.5 text-[13px] italic leading-[1.1] text-[#999]">
+              {t("footer.tagline2")}
+            </p>
           </div>
         </div>
+
+        {/* Right: nav columns */}
+        <div className="flex flex-col gap-8 md:flex-row md:justify-end md:gap-[88px]">
+          <div>
+            <h5 className="mb-3 text-[20px] font-semibold">
+              {t("footer.products")}
+            </h5>
+            <ul className="flex flex-wrap gap-x-5 gap-y-2 md:block">
+              {products.map((p) => (
+                <li key={p.label} className="md:my-2">
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener"
+                    className="text-[15px] text-[#666] no-underline"
+                  >
+                    {p.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h5 className="mb-3 text-[20px] font-semibold">
+              {t("footer.support")}
+            </h5>
+            <ul className="flex flex-wrap gap-x-5 gap-y-2 md:block">
+              <li className="md:my-2">
+                <a
+                  href="https://www.powerrateindex.org/contact-us"
+                  target="_blank"
+                  rel="noopener"
+                  className="text-[15px] text-[#666] no-underline"
+                >
+                  {t("footer.contactUs")}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="mb-3 text-[20px] font-semibold">
+              {t("footer.developers")}
+            </h5>
+            <ul className="flex flex-wrap gap-x-5 gap-y-2 md:block">
+              <li className="md:my-2">
+                <a
+                  href="https://documenter.getpostman.com/view/4831254/SzKYPH3c"
+                  target="_blank"
+                  rel="noopener"
+                  className="text-[15px] text-[#666] no-underline"
+                >
+                  {t("footer.documentation")}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="mb-3 text-[20px] font-semibold">
+              {t("footer.followUs")}
+            </h5>
+            <ul className="flex gap-5">
+              <li>
+                <a
+                  href="https://www.facebook.com/p/eIQdigital-61552099297028/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Facebook"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="36"
+                    height="36"
+                    viewBox="0 0 36 36"
+                  >
+                    <path
+                      fill="#000"
+                      fillRule="nonzero"
+                      d="M18 0C8.075 0 0 8.075 0 18s8.075 18 18 18 18-8.075 18-18S27.925 0 18 0m4.476 18.634h-2.928v10.439h-4.34v-10.44h-2.062v-3.688h2.063v-2.386c0-1.71.812-4.38 4.379-4.38l3.214.013v3.58h-2.334c-.38 0-.92.19-.92 1.005v2.168h3.307z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/eiqdigital/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="36"
+                    height="36"
+                    viewBox="0 0 36 36"
+                  >
+                    <path
+                      fill="#000"
+                      fillRule="evenodd"
+                      d="M18 0c9.934 0 18 8.066 18 18s-8.066 18-18 18S0 27.934 0 18 8.066 0 18 0m-5.628 28.116V14.059H7.7v14.057zm16.849 0v-8.061c0-4.318-2.306-6.327-5.38-6.327-2.479 0-3.59 1.364-4.21 2.321v-1.99h-4.673c.062 1.319 0 14.057 0 14.057h4.672v-7.85c0-.42.03-.84.154-1.141.337-.84 1.107-1.709 2.397-1.709 1.69 0 2.367 1.29 2.367 3.179v7.52zM10.067 7.28c-1.599 0-2.643 1.051-2.643 2.429 0 1.349 1.013 2.429 2.581 2.429h.03c1.63 0 2.644-1.08 2.644-2.43-.03-1.377-1.014-2.428-2.612-2.428"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-8 text-center text-[14px] text-[#121f27]">
+        {t("footer.rights")}
       </div>
     </footer>
   );

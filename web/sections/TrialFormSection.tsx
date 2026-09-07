@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import { t } from "@/lib/i18n";
 import { Button } from "@/elements/Button";
+import { Modal } from "@/elements/Modal";
+import { ContactForm } from "@/components/ContactForm";
 import type { CtaConfig } from "@/types";
 
 export interface TrialFormSectionProps {
@@ -10,9 +15,11 @@ export interface TrialFormSectionProps {
 /**
  * CTA section: deep navy background (GHL #221A76), left-aligned text,
  * dashboard screenshot as <img> (80% width, centered), purple button.
- * GHL button action = openPopup (contact form modal).
+ * Button opens a modal with the contact form (GHL openPopup behavior).
  */
 export function TrialFormSection({ cta }: TrialFormSectionProps) {
+  const [open, setOpen] = useState(false);
+
   return (
     <section className="w-full bg-pri-navy py-[60px]">
       <div className="mx-auto max-w-3xl px-6">
@@ -28,6 +35,7 @@ export function TrialFormSection({ cta }: TrialFormSectionProps) {
           <div className="flex justify-center md:justify-end">
             <Button
               size="lg"
+              onClick={() => setOpen(true)}
               className="rounded-full bg-pri-purple px-5 py-4 text-sm font-bold uppercase tracking-[2px] text-white hover:bg-pri-purple/90"
             >
               {t(cta.labelKey)}
@@ -45,6 +53,10 @@ export function TrialFormSection({ cta }: TrialFormSectionProps) {
           />
         </div>
       </div>
+
+      <Modal open={open} onClose={() => setOpen(false)}>
+        <ContactForm onSubmitted={() => setOpen(false)} />
+      </Modal>
     </section>
   );
 }

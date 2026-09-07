@@ -9,4 +9,10 @@ export {
   type WhyItMattersSectionProps,
 } from "./WhyItMattersSection";
 export { TrialFormSection, type TrialFormSectionProps } from "./TrialFormSection";
-export { FooterSection, type FooterSectionProps } from "./FooterSection";
+export { FooterSection } from "./FooterSection";
+export { HomeHeader } from "./HomeHeader";
+export { HomeHero, type HomeHeroProps } from "./HomeHero";
+export { HomeScrape } from "./HomeScrape";
+export { HomeFeatures, type HomeFeaturesProps } from "./HomeFeatures";
+export { HomePlatform, type HomePlatformProps } from "./HomePlatform";
+export { HomeContact } from "./HomeContact";

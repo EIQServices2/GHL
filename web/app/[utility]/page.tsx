@@ -31,7 +31,7 @@ export default async function UtilityPage({
       <RateComparisonSection rateChange={data.rateChange} />
       <WhyItMattersSection valueProps={data.valueProps} />
       <TrialFormSection cta={data.cta} />
-      <FooterSection footer={data.footer} />
+      <FooterSection />
     </main>
   );
 }
