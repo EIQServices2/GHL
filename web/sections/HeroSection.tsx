@@ -26,7 +26,7 @@ export function HeroSection({ rateChange }: HeroSectionProps) {
         aria-hidden
       />
       <Container size="narrow" className="relative text-left">
-        <h1 className="text-5xl font-normal leading-[1.1] tracking-[-1px] text-white">
+        <h1 className="text-3xl font-normal leading-[1.1] tracking-[-1px] text-white md:text-5xl">
           {rateChange.utility.name} {t("rateChange.title")}.{" "}
           <span className="text-pri-lavender">{t("rateChange.seeHow")}</span>
         </h1>

@@ -17,7 +17,7 @@ export function WhyItMattersSection({
   return (
     <section className="w-full py-12">
       <Container size="narrow" className="grid grid-cols-1 gap-6 md:grid-cols-[2fr_3fr]">
-        <h2 className="text-[42px] font-bold leading-[1.3] text-pri-purple">
+        <h2 className="text-3xl font-bold leading-[1.3] text-pri-purple md:text-[42px]">
           {t("rateChange.whyItMatters")}
         </h2>
         <div className="text-[18px] leading-[1.3] text-pri-dark">

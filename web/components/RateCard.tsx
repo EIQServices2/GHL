@@ -22,7 +22,7 @@ export function RateCard({ label, value, variant = "default" }: RateCardProps) {
       <p className="text-sm font-medium text-pri-muted">{label}</p>
       <p
         className={cn(
-          "mt-2 text-[44px] font-bold leading-tight",
+          "mt-2 text-3xl font-bold leading-tight md:text-[44px]",
           isCurrent ? "text-pri-purple" : "text-pri-footer-text"
         )}
       >

@@ -24,7 +24,7 @@ export function TrialFormSection() {
             <h2 className="text-sm font-normal uppercase leading-[2] tracking-[2px] text-pri-lavender">
               {t("rateChange.experienceFree")}
             </h2>
-            <h3 className="mt-2 text-5xl font-bold leading-[1.2] tracking-[-1px] text-white">
+            <h3 className="mt-2 text-3xl font-bold leading-[1.2] tracking-[-1px] text-white md:text-5xl">
               {t("rateChange.startMonitoring")}
             </h3>
           </div>
