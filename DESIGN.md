@@ -1,7 +1,7 @@
 # DESIGN.md — PowerRateIndex (GHL clone)
 
 > Design token spec for the GHL decommission frontend. Single source of truth for visual language.
-> Source: extracted from the GHL page (`eiqdigital.info/home-577156-...`) + implemented in `web/app/globals.css`.
+> Source: extracted from the GHL page CSS (`eiqdigital.info/home-577156-...`) — exact values.
 
 ## 1. Brand
 
@@ -9,57 +9,53 @@
 - **Company:** EIQdigital
 - **Tagline:** "AI-First, Data and Technology Leader. Powering the Energy Industry's Digital and Sustainability Transition."
 
-## 2. Color Palette
+## 2. Color Palette (exact from GHL CSS)
 
-### Brand accents
 | Token | Hex | Usage |
 |---|---|---|
-| `--pri-blue` | `#188bf6` | Primary blue — current rate, checkmark icons, link hover |
-| `--pri-purple` | `#624bff` | CTA band background |
-| `--pri-purple-light` | `#7e6cff` | Purple accent (hover/light) |
-| `--pri-purple-deep` | `#383cc2` | Deep purple accent |
-| `--pri-accent` | `#ff6240` | Accent orange (sparing) |
-
-### Neutrals
-| Token | Hex | Usage |
-|---|---|---|
-| `--pri-body` | `#2c3345` | Body text / headings |
+| `--pri-navy` | `#221a76` | Hero + CTA section background |
+| `--pri-blue` | `#188bf6` | Current rate, checkmarks, CTA button |
+| `--pri-surface` | `#f1f4fa` | Footer background |
+| `--pri-footer-text` | `#252525` | Footer text |
 | `--pri-muted` | `#8893a8` | Muted / secondary text |
-| `--pri-surface` | `#f1f4fa` | Hero section background |
-| `--background` | `#ffffff` | Page background |
-| `--border` | `#e5e7eb` | Card borders |
+| `--pri-header` | `#ffffffe6` | Header/nav background (white 90%) |
 
 ## 3. Typography
 
-- **Font:** Raleway (Google Font, `next/font/google`)
+- **Font:** Plus Jakarta Sans (Google Font, `next/font/google`) — matches GHL `--contentfont` / `--headlinefont`.
 - **Scale:**
-  - Hero headline: `text-4xl md:text-5xl` bold
+  - Hero headline: `text-4xl md:text-5xl` bold, white
   - Section heading: `text-2xl` bold
-  - CTA heading: `text-3xl` bold
+  - CTA heading: `text-3xl` bold, white
   - Rate numbers: `text-3xl` bold
   - Eyebrow (CTA): `text-sm` uppercase tracking-wider
   - Body: `text-lg` / `text-sm` muted
 
-## 4. Layout
+## 4. Layout (section order, matches GHL)
 
-- Single-column, centered, max-width `max-w-3xl` content container.
-- Sections stacked vertically, separated by background color:
-  1. Hero (pale `--pri-surface` band)
-  2. Rate comparison (white)
-  3. Why It Matters (white)
-  4. CTA (purple band)
-  5. Footer (dark `--pri-body` band)
+1. **Header** — white (`#ffffffe6`), subtle shadow `0 1px 3px 0 #03004717`, centered logo
+2. **Hero** — deep navy (`#221a76`), white headline + subtitle
+3. **Rate comparison** — white, previous vs current cards
+4. **Why It Matters** — white, heading + body + 3 checkmarks
+5. **CTA** — deep navy (`#221a76`), eyebrow + heading + email form + blue button
+6. **Footer** — light (`#f1f4fa`), two columns: logo (left) + copyright/tagline (right), dark text
 
 ## 5. Components
 
-| Component | File | Notes |
+| Layer | File | Notes |
 |---|---|---|
-| `RateChangeHero` | `components/rate-change/RateChangeHero.tsx` | Utility name + title + subtitle |
-| `RateComparison` | `components/rate-change/RateComparison.tsx` | Previous vs current rate cards |
-| `WhyItMatters` | `components/rate-change/WhyItMatters.tsx` | 3 value props with check icons |
-| `CtaSection` | `components/rate-change/CtaSection.tsx` | Purple band + white pill button |
-| `Footer` | `components/rate-change/Footer.tsx` | Dark band + copyright + tagline |
-| `Button` | `components/ui/button.tsx` | shadcn/ui primitive (radix-nova) |
+| **Page** | `app/[utility]/page.tsx` | dynamic route, static export |
+| **Section** | `sections/HeaderSection.tsx` | white header + logo |
+| **Section** | `sections/HeroSection.tsx` | navy hero |
+| **Section** | `sections/RateComparisonSection.tsx` | rate cards |
+| **Section** | `sections/WhyItMattersSection.tsx` | value props |
+| **Section** | `sections/TrialFormSection.tsx` | navy CTA + form |
+| **Section** | `sections/FooterSection.tsx` | light footer, 2-col |
+| **Component** | `components/Logo.tsx` | wordmark |
+| **Component** | `components/RateCard.tsx` | rate display card |
+| **Component** | `components/CheckItem.tsx` | checkmark bullet |
+| **Element** | `elements/Button.tsx` | shadcn button |
+| **Element** | `elements/Link.tsx` | anchor link |
 
 ## 6. Radius & Spacing
 

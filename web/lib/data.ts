@@ -37,17 +37,16 @@ export function getPageData(slug: string): RateChangePageData | null {
   return {
     rateChange,
     valueProps: [
-      { icon: "check", textKey: "rateChange.valueProp1" },
-      { icon: "check", textKey: "rateChange.valueProp2" },
-      { icon: "check", textKey: "rateChange.valueProp3" },
+      "rateChange.valueProp1",
+      "rateChange.valueProp2",
+      "rateChange.valueProp3",
     ],
     cta: {
       labelKey: "rateChange.cta",
       href: "https://www.powerrateindex.org/",
     },
     footer: {
-      copyright: "2025 © EIQdigital.",
-      taglineKey: "footer.tagline",
+      copyright: "2025 © EIQdigital. All Rights Reserved.",
     },
   };
 }

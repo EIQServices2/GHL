@@ -5,7 +5,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-raleway);
+  --font-sans: var(--font-plus-jakarta-sans);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -30,15 +30,14 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  /* PowerRateIndex brand colors (extracted from GHL page) */
+  /* PowerRateIndex brand tokens (exact from GHL page CSS) */
+  --color-pri-navy: var(--pri-navy);
   --color-pri-blue: var(--pri-blue);
   --color-pri-purple: var(--pri-purple);
-  --color-pri-purple-light: var(--pri-purple-light);
-  --color-pri-purple-deep: var(--pri-purple-deep);
-  --color-pri-body: var(--pri-body);
-  --color-pri-muted: var(--pri-muted);
-  --color-pri-accent: var(--pri-accent);
   --color-pri-surface: var(--pri-surface);
+  --color-pri-footer-text: var(--pri-footer-text);
+  --color-pri-muted: var(--pri-muted);
+  --color-pri-header: var(--pri-header);
 }
 
 :root {
@@ -62,15 +61,14 @@
   --ring: oklch(0.708 0 0);
   --radius: 0.625rem;
 
-  /* PowerRateIndex brand tokens (from GHL page inline CSS) */
-  --pri-blue: #188bf6;
-  --pri-purple: #624bff;
-  --pri-purple-light: #7e6cff;
-  --pri-purple-deep: #383cc2;
-  --pri-body: #2c3345;
-  --pri-muted: #8893a8;
-  --pri-accent: #ff6240;
-  --pri-surface: #f1f4fa;
+  /* PowerRateIndex brand tokens (exact from GHL page CSS) */
+  --pri-navy: #221a76; /* hero + CTA section background */
+  --pri-blue: #188bf6; /* checkmarks */
+  --pri-purple: #624bff; /* current rate + CTA button */
+  --pri-surface: #f1f4fa; /* footer background */
+  --pri-footer-text: #252525; /* footer text */
+  --pri-muted: #8893a8; /* muted text */
+  --pri-header: #ffffffe6; /* header/nav background (white 90%) */
 }
 
 @layer base {
