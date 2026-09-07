@@ -40,11 +40,17 @@ Current work, blockers, pending decisions live in `~/Project_State/D0045/` (not 
 ## Key conventions (user-mandated)
 
 - **Types** in `web/types/` — one file per domain, plain interfaces, barrel `index.ts`.
-- **i18n** via `web/lib/i18n.ts` — `locales` const + `translations: Record<Locale, Record<string,string>>`, human-readable keys, never hardcode English.
-- **Dummy data** in `web/data/` — `home.json` + `utilities.json` + `rate-changes/{slug}.json`.
+- **i18n** via `web/lib/i18n.ts` — `locales` const + `translations: Record<Locale, Record<string,string>>`, human-readable keys, `{var}` interpolation, `en` + `es` locales. Never hardcode English.
+- **Non-translatable config** in `web/data/site.json` (URLs, brand names, footer products, auth endpoints).
+- **Single data accessor** — `getData()` in `web/lib/data.ts` is the ONLY way to read `/data/*.json` (mimics a server API). No scattered imports.
+- **Dummy data** in `web/data/` — `home.json` + `utilities.json` + `rate-changes/{slug}.json` + `site.json`.
 - **Static export** (`output: 'export'`) → S3 + CloudFront / Amplify.
-- **Extensible** — one `[utility]/page.tsx` driven by `generateStaticParams`, not N hardcoded pages.
+- **Extensible** — one `[utility]/page.tsx` driven by `generateStaticParams` + `fs.readdirSync` (dynamic slugs), not N hardcoded pages.
 - **4-layer architecture** — page → sections → components → elements (see `architecture.md`).
+- **Shared chrome** — Header + UtilityLinksSection + FooterSection render once in `layout.tsx` (identical on every page).
+- **Elements enforced** — all buttons via `elements/Button`, all nav via `elements/Link`, all logos via `components/Logo`, all alignment via `elements/Container`.
+- **Single logo** — `logo-powerrateindex.png` only (`logo-dark.png` removed).
+- **Mobile-first** — base styles = mobile, `md:`/`lg:` = desktop escalation.
 - **Work in isolated worktree** — never modify the main checkout directly (project rule).
 
 ## Branches
