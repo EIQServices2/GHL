@@ -16,7 +16,7 @@ export default function ResetPasswordPage() {
   return (
     <section className="w-full bg-pri-bg-light py-16">
       <Container size="form">
-        <div className="mx-auto max-w-md rounded-lg bg-white p-8 shadow-sm">
+        <div className="mx-auto max-w-md rounded-lg bg-white p-6 shadow-sm md:p-8">
           <h1 className="text-center text-2xl font-bold text-pri-ink">
             {t("auth.resetTitle")}
           </h1>

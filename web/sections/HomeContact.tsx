@@ -17,7 +17,7 @@ export function HomeContact() {
           {t("home.contactSubtitle")}
         </p>
 
-        <div className="mt-8 rounded-lg bg-white p-8 shadow-sm">
+        <div className="mt-8 rounded-lg bg-white p-6 shadow-sm md:p-8">
           <ContactForm />
         </div>
       </Container>

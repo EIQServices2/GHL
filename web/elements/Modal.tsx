@@ -39,7 +39,7 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
       aria-modal="true"
     >
       <div
-        className="relative w-full max-w-[720px] rounded-lg bg-white p-6 shadow-xl"
+        className="relative max-h-[90vh] w-full max-w-[720px] overflow-y-auto rounded-lg bg-white p-6 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         <Button

@@ -56,7 +56,7 @@ export function FooterSection() {
         {/* Right: nav columns */}
         <div className="flex flex-col gap-8 md:flex-row md:justify-end md:gap-[88px]">
           <div>
-            <h5 className="mb-3 text-[20px] font-semibold">
+            <h5 className="mb-3 text-[18px] font-semibold md:text-[20px]">
               {t("footer.products")}
             </h5>
             <ul className="flex flex-wrap gap-x-5 gap-y-2 md:block">
@@ -75,7 +75,7 @@ export function FooterSection() {
             </ul>
           </div>
           <div>
-            <h5 className="mb-3 text-[20px] font-semibold">
+            <h5 className="mb-3 text-[18px] font-semibold md:text-[20px]">
               {t("footer.support")}
             </h5>
             <ul className="flex flex-wrap gap-x-5 gap-y-2 md:block">
@@ -92,7 +92,7 @@ export function FooterSection() {
             </ul>
           </div>
           <div>
-            <h5 className="mb-3 text-[20px] font-semibold">
+            <h5 className="mb-3 text-[18px] font-semibold md:text-[20px]">
               {t("footer.developers")}
             </h5>
             <ul className="flex flex-wrap gap-x-5 gap-y-2 md:block">
@@ -109,7 +109,7 @@ export function FooterSection() {
             </ul>
           </div>
           <div>
-            <h5 className="mb-3 text-[20px] font-semibold">
+            <h5 className="mb-3 text-[18px] font-semibold md:text-[20px]">
               {t("footer.followUs")}
             </h5>
             <ul className="flex gap-5">

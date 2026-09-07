@@ -20,7 +20,7 @@ export function WhyItMattersSection({
         <h2 className="text-3xl font-bold leading-[1.3] text-pri-purple md:text-[42px]">
           {t("rateChange.whyItMatters")}
         </h2>
-        <div className="text-[18px] leading-[1.3] text-pri-dark">
+        <div className="text-base leading-[1.4] text-pri-dark md:text-[18px] md:leading-[1.3]">
           <p>{t("rateChange.whyItMattersBody")}</p>
           {valueProps.map((key) => (
             <p key={key} className="mt-2 flex items-start gap-2">

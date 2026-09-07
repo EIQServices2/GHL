@@ -16,12 +16,9 @@ export function HeroSection({ rateChange }: HeroSectionProps) {
   return (
     <section className="relative w-full overflow-hidden bg-pri-navy py-[60px]">
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 bg-cover bg-top bg-no-repeat md:bg-[length:100%_auto]"
         style={{
           backgroundImage: "url(/images/hero-wide.png)",
-          backgroundSize: "100% auto",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "top",
         }}
         aria-hidden
       />

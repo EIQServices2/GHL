@@ -8,7 +8,7 @@ import { Link } from "@/elements/Link";
 export default function NotFound() {
   return (
     <div className="flex flex-1 flex-col items-center justify-center bg-white px-4 py-24 text-center">
-      <h1 className="text-6xl font-bold text-pri-purple">404</h1>
+      <h1 className="text-4xl font-bold text-pri-purple md:text-6xl">404</h1>
       <p className="mt-4 text-lg text-pri-ink-muted">{t("notFound.title")}</p>
       <Link
         href="/"

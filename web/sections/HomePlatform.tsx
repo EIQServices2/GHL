@@ -62,7 +62,7 @@ export function HomePlatform({ states, tduRates }: HomePlatformProps) {
             <div className="space-y-3">
               {tduRates.map((r) => (
                 <div key={r.name} className="flex items-center gap-3">
-                  <span className="w-48 shrink-0 text-sm text-pri-ink-muted">
+                  <span className="w-28 shrink-0 truncate text-sm text-pri-ink-muted md:w-48">
                     {r.name}
                   </span>
                   <div className="h-6 flex-1 rounded bg-pri-fill">
@@ -71,7 +71,7 @@ export function HomePlatform({ states, tduRates }: HomePlatformProps) {
                       style={{ width: `${(r.rate / maxRate) * 100}%` }}
                     />
                   </div>
-                  <span className="w-16 shrink-0 text-right text-sm font-semibold text-pri-ink">
+                  <span className="w-14 shrink-0 text-right text-sm font-semibold text-pri-ink md:w-16">
                     {r.rate.toFixed(2)}¢
                   </span>
                 </div>
