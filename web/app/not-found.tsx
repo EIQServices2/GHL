@@ -12,7 +12,7 @@ export default function NotFound() {
       <p className="mt-4 text-lg text-pri-ink-muted">{t("notFound.title")}</p>
       <Link
         href="/"
-        className="mt-8 inline-flex cursor-pointer items-center gap-2 rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white"
+        className="mt-8 inline-flex cursor-pointer items-center gap-2 rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white hover:bg-pri-purple/90"
       >
         {t("notFound.home")}
       </Link>

@@ -94,7 +94,7 @@ export function ContactForm({ onSubmitted }: ContactFormProps) {
       </div>
       <Button
         type="submit"
-        className="mt-6 w-full rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white sm:w-auto"
+        className="mt-6 w-full rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white hover:bg-pri-purple/90 sm:w-auto"
       >
         {t("home.formSubmit")}
       </Button>

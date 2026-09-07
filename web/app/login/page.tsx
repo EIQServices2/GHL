@@ -70,7 +70,7 @@ export default function LoginPage() {
 
             <Button
               type="submit"
-              className="mt-6 w-full rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white"
+              className="mt-6 w-full rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white hover:bg-pri-purple/90"
             >
               {t("auth.signIn")}
             </Button>

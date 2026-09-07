@@ -58,7 +58,7 @@ export function HomeHero({ stats }: HomeHeroProps) {
           </Button>
           <Button
             onClick={scrollToContact}
-            className="inline-flex items-center gap-2 rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white"
+            className="inline-flex items-center gap-2 rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white hover:bg-pri-purple/90"
           >
             {t("home.getStarted")}
             <ArrowRight className="h-4 w-4" />

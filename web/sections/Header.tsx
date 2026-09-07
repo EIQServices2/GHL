@@ -18,7 +18,7 @@ export function Header() {
           className="h-12 w-auto min-w-[120px]"
           priority
         />
-        <Button className="rounded bg-pri-purple px-5 py-2 text-sm font-semibold text-white">
+        <Button className="rounded bg-pri-purple px-5 py-2 text-sm font-semibold text-white hover:bg-pri-purple/90">
           {t("home.login")}
         </Button>
       </Container>
