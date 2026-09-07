@@ -4,6 +4,7 @@ import { ArrowRight, Headphones } from "lucide-react";
 import { t } from "@/lib/i18n";
 import { useCountUp } from "@/lib/useCountUp";
 import { Button } from "@/elements/Button";
+import { Container } from "@/elements/Container";
 import type { HomeStats } from "@/types/home";
 
 export interface HomeHeroProps {
@@ -34,7 +35,7 @@ export function HomeHero({ stats }: HomeHeroProps) {
 
   return (
     <section className="w-full bg-white py-12">
-      <div className="mx-auto max-w-[1440px] px-4 text-center">
+      <Container className="text-center">
         <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-tight text-pri-ink md:text-5xl">
           {t("home.heroTitle")}
         </h1>
@@ -63,7 +64,7 @@ export function HomeHero({ stats }: HomeHeroProps) {
             <ArrowRight className="h-4 w-4" />
           </Button>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

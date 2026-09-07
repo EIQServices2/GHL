@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { t } from "@/lib/i18n";
+import { getData } from "@/lib/data";
+import { Header } from "@/sections/Header";
+import { FooterSection } from "@/sections/FooterSection";
+import { UtilityLinksSection } from "@/sections/UtilityLinksSection";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -62,12 +66,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { utilities } = getData();
+
   return (
     <html
       lang="en"
       className={`${plusJakartaSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Header />
+        <main className="flex flex-1 flex-col">{children}</main>
+        <UtilityLinksSection utilities={utilities} />
+        <FooterSection />
+      </body>
     </html>
   );
 }

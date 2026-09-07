@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { t } from "@/lib/i18n";
+import { Container } from "@/elements/Container";
 
 /**
  * Data scraping section: light lavender bg, illustration left + 3 bullets right.
@@ -8,7 +9,7 @@ import { t } from "@/lib/i18n";
 export function HomeScrape() {
   return (
     <section className="w-full bg-pri-bg-light py-12">
-      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-6 px-4 md:grid-cols-[1fr_2fr]">
+      <Container className="grid grid-cols-1 items-center gap-6 md:grid-cols-[1fr_2fr]">
         <Image
           src="/images/data-store-1.png"
           alt=""
@@ -26,7 +27,7 @@ export function HomeScrape() {
             <li>• {t("home.scrapeBullet3")}</li>
           </ul>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

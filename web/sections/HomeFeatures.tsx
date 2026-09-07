@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { t } from "@/lib/i18n";
+import { Container } from "@/elements/Container";
 import type { FeatureCard } from "@/types/home";
 
 export interface HomeFeaturesProps {
@@ -13,7 +14,7 @@ export interface HomeFeaturesProps {
 export function HomeFeatures({ cards }: HomeFeaturesProps) {
   return (
     <section className="w-full bg-white py-12">
-      <div className="mx-auto max-w-[1440px] px-4">
+      <Container>
         <h2 className="mx-auto max-w-3xl text-center text-2xl font-bold text-pri-ink md:text-3xl">
           {t("home.featuresTitle")}
         </h2>
@@ -34,7 +35,7 @@ export function HomeFeatures({ cards }: HomeFeaturesProps) {
             </div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

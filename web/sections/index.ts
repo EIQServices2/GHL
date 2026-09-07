@@ -1,4 +1,4 @@
-export { HeaderSection } from "./HeaderSection";
+export { Header } from "./Header";
 export { HeroSection, type HeroSectionProps } from "./HeroSection";
 export {
   RateComparisonSection,
@@ -10,10 +10,9 @@ export {
 } from "./WhyItMattersSection";
 export { TrialFormSection } from "./TrialFormSection";
 export { FooterSection } from "./FooterSection";
-export { HomeHeader } from "./HomeHeader";
 export { HomeHero, type HomeHeroProps } from "./HomeHero";
 export { HomeScrape } from "./HomeScrape";
 export { HomeFeatures, type HomeFeaturesProps } from "./HomeFeatures";
 export { HomePlatform, type HomePlatformProps } from "./HomePlatform";
 export { HomeContact } from "./HomeContact";
-export { UtilityLinksSection, type UtilityLinksSectionProps } from "./UtilityLinksSection";
+export { UtilityLinksSection } from "./UtilityLinksSection";

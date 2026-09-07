@@ -1,4 +1,5 @@
 import { t } from "@/lib/i18n";
+import { Container } from "@/elements/Container";
 import { Checkmark } from "@/components/Checkmark";
 
 export interface WhyItMattersSectionProps {
@@ -15,7 +16,7 @@ export function WhyItMattersSection({
 }: WhyItMattersSectionProps) {
   return (
     <section className="w-full py-12">
-      <div className="mx-auto grid max-w-3xl grid-cols-1 gap-6 px-6 md:grid-cols-[2fr_3fr]">
+      <Container size="narrow" className="grid grid-cols-1 gap-6 md:grid-cols-[2fr_3fr]">
         <h2 className="text-[42px] font-bold leading-[1.3] text-pri-purple">
           {t("rateChange.whyItMatters")}
         </h2>
@@ -28,7 +29,7 @@ export function WhyItMattersSection({
             </p>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

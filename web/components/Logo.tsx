@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Link } from "@/elements/Link";
 
 export interface LogoProps {
-  src: string;
   alt?: string;
   className?: string;
   href?: string;
@@ -12,21 +11,20 @@ export interface LogoProps {
 }
 
 /**
- * Reusable logo. Renders the <Image>; wraps in a Link when `href` is set.
- * Centralizes logo markup (used by header, home header, footer).
+ * Reusable logo (single source: /images/logo-powerrateindex.png).
+ * Renders the <Image>; wraps in a Link when `href` is set.
  */
 export function Logo({
-  src,
   alt = "Power Rate Index",
   className = "h-10 w-auto",
   href,
-  width = 180,
-  height = 30,
+  width = 1406,
+  height = 174,
   priority = false,
 }: LogoProps) {
   const img = (
     <Image
-      src={src}
+      src="/images/logo-powerrateindex.png"
       alt={alt}
       width={width}
       height={height}

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { t } from "@/lib/i18n";
 import { Button } from "@/elements/Button";
+import { Container } from "@/elements/Container";
 import type { StateOption, TduRate } from "@/types/home";
 
 export interface HomePlatformProps {
@@ -24,7 +25,7 @@ export function HomePlatform({ states, tduRates }: HomePlatformProps) {
 
   return (
     <section className="w-full bg-pri-bg-grey py-12">
-      <div className="mx-auto max-w-[1440px] px-4">
+      <Container>
         <h2 className="text-center text-2xl font-bold text-pri-ink md:text-3xl">
           {t("home.platformTitle")}
         </h2>
@@ -78,7 +79,7 @@ export function HomePlatform({ states, tduRates }: HomePlatformProps) {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

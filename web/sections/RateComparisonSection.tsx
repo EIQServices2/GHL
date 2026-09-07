@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { t } from "@/lib/i18n";
+import { Container } from "@/elements/Container";
 import { RateCard } from "@/components/RateCard";
 import type { RateChange } from "@/types";
 
@@ -21,7 +22,7 @@ export function RateComparisonSection({
 }: RateComparisonSectionProps) {
   return (
     <section className="w-full py-12">
-      <div className="mx-auto max-w-3xl px-6">
+      <Container size="narrow">
         <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-[1fr_auto_1fr]">
           <RateCard
             label={t("rateChange.previousRate")}
@@ -32,7 +33,7 @@ export function RateComparisonSection({
             alt=""
             width={527}
             height={527}
-            className="mx-auto h-8 w-8 rotate-0 md:rotate-0"
+            className="mx-auto h-8 w-8"
           />
           <RateCard
             label={`${t("rateChange.updatedAsOf")} ${rateChange.updatedAsOf}`}
@@ -40,7 +41,7 @@ export function RateComparisonSection({
             variant="current"
           />
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

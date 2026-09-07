@@ -1,4 +1,5 @@
 import { t } from "@/lib/i18n";
+import { Container } from "@/elements/Container";
 import type { RateChange } from "@/types";
 
 export interface HeroSectionProps {
@@ -24,7 +25,7 @@ export function HeroSection({ rateChange }: HeroSectionProps) {
         }}
         aria-hidden
       />
-      <div className="relative mx-auto max-w-3xl px-6 text-left">
+      <Container size="narrow" className="relative text-left">
         <h1 className="text-5xl font-normal leading-[1.1] tracking-[-1px] text-white">
           {rateChange.utility.name} {t("rateChange.title")}.{" "}
           <span className="text-pri-lavender">{t("rateChange.seeHow")}</span>
@@ -32,7 +33,7 @@ export function HeroSection({ rateChange }: HeroSectionProps) {
         <p className="mt-4 max-w-xl text-lg leading-[1.5] text-white">
           {t("rateChange.subtitle")}
         </p>
-      </div>
+      </Container>
     </section>
   );
 }

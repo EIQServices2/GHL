@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { t } from "@/lib/i18n";
 import { Button } from "@/elements/Button";
+import { Container } from "@/elements/Container";
 import { Modal } from "@/elements/Modal";
 import { ContactForm } from "@/components/ContactForm";
 
@@ -17,7 +18,7 @@ export function TrialFormSection() {
 
   return (
     <section className="w-full bg-pri-navy py-[60px]">
-      <div className="mx-auto max-w-3xl px-6">
+      <Container size="narrow">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-[3fr_2fr] md:items-center">
           <div className="text-left">
             <h2 className="text-sm font-normal uppercase leading-[2] tracking-[2px] text-pri-lavender">
@@ -47,7 +48,7 @@ export function TrialFormSection() {
             className="h-auto w-[80%]"
           />
         </div>
-      </div>
+      </Container>
 
       <Modal open={open} onClose={() => setOpen(false)}>
         <ContactForm onSubmitted={() => setOpen(false)} />

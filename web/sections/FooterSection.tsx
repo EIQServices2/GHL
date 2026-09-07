@@ -2,6 +2,7 @@ import Image from "next/image";
 import { t } from "@/lib/i18n";
 import { getData } from "@/lib/data";
 import { Link } from "@/elements/Link";
+import { Container } from "@/elements/Container";
 import { Logo } from "@/components/Logo";
 
 /**
@@ -16,17 +17,11 @@ export function FooterSection() {
 
   return (
     <footer className="w-full bg-white py-[50px] text-pri-ink">
-      <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-8 px-4 md:grid-cols-[1fr_2fr]">
+      <Container className="grid grid-cols-1 gap-8 md:grid-cols-[1fr_2fr]">
         {/* Left: logo + AWS + eIQdigital */}
         <div className="flex flex-col gap-8">
           <div className="flex items-center">
-            <Logo
-              src="/images/logo-dark.png"
-              href="/"
-              width={180}
-              height={30}
-              className="h-[30px] w-auto"
-            />
+            <Logo href="/" width={180} height={30} className="h-[30px] w-auto" />
           </div>
           <div>
             <Link href={footer.aws.href} target="_blank" rel="noopener">
@@ -163,7 +158,7 @@ export function FooterSection() {
             </ul>
           </div>
         </div>
-      </div>
+      </Container>
 
       <div className="mt-8 text-center text-[14px] text-pri-ink">
         {t("footer.rights")}

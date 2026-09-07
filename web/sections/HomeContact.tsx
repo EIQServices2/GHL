@@ -1,4 +1,5 @@
 import { t } from "@/lib/i18n";
+import { Container } from "@/elements/Container";
 import { ContactForm } from "@/components/ContactForm";
 
 /**
@@ -8,7 +9,7 @@ import { ContactForm } from "@/components/ContactForm";
 export function HomeContact() {
   return (
     <section id="contact" className="w-full bg-pri-bg-light py-12">
-      <div className="mx-auto max-w-2xl px-4 text-center">
+      <Container size="form" className="text-center">
         <h2 className="text-2xl font-bold text-pri-ink md:text-3xl">
           {t("home.contactTitle")}
         </h2>
@@ -19,7 +20,7 @@ export function HomeContact() {
         <div className="mt-8 rounded-lg bg-white p-8 shadow-sm">
           <ContactForm />
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

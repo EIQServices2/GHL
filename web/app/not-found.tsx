@@ -2,11 +2,12 @@ import { t } from "@/lib/i18n";
 import { Link } from "@/elements/Link";
 
 /**
- * Global 404 page (static export → 404.html).
+ * Global 404 page (static export → 404.html). Rendered inside the root
+ * layout, so header/footer/utility-links chrome is inherited.
  */
 export default function NotFound() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center bg-white px-4 py-24 text-center">
+    <div className="flex flex-1 flex-col items-center justify-center bg-white px-4 py-24 text-center">
       <h1 className="text-6xl font-bold text-pri-purple">404</h1>
       <p className="mt-4 text-lg text-pri-ink-muted">{t("notFound.title")}</p>
       <Link
@@ -15,6 +16,6 @@ export default function NotFound() {
       >
         {t("notFound.home")}
       </Link>
-    </main>
+    </div>
   );
 }

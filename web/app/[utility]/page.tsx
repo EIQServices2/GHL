@@ -2,13 +2,10 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getData } from "@/lib/data";
 import { t } from "@/lib/i18n";
-import { HeaderSection } from "@/sections/HeaderSection";
 import { HeroSection } from "@/sections/HeroSection";
 import { RateComparisonSection } from "@/sections/RateComparisonSection";
 import { WhyItMattersSection } from "@/sections/WhyItMattersSection";
 import { TrialFormSection } from "@/sections/TrialFormSection";
-import { UtilityLinksSection } from "@/sections/UtilityLinksSection";
-import { FooterSection } from "@/sections/FooterSection";
 
 export function generateStaticParams(): { utility: string }[] {
   return getData().utilities.map((u) => ({ utility: u.slug }));
@@ -41,16 +38,16 @@ export default async function UtilityPage({
   params: Promise<{ utility: string }>;
 }) {
   const { utility } = await params;
-  const { rateChanges, utilities } = getData();
-  const rateChange = rateChanges.find((r) => r.utility.slug === utility);
+  const rateChange = getData().rateChanges.find(
+    (r) => r.utility.slug === utility
+  );
 
   if (!rateChange) {
     notFound();
   }
 
   return (
-    <main className="flex flex-1 flex-col">
-      <HeaderSection />
+    <>
       <HeroSection rateChange={rateChange} />
       <RateComparisonSection rateChange={rateChange} />
       <WhyItMattersSection
@@ -61,8 +58,6 @@ export default async function UtilityPage({
         ]}
       />
       <TrialFormSection />
-      <UtilityLinksSection utilities={utilities} />
-      <FooterSection />
-    </main>
+    </>
   );
 }
