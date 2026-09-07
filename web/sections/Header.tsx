@@ -1,11 +1,12 @@
 import { Logo } from "@/components/Logo";
 import { Button } from "@/elements/Button";
+import { Link } from "@/elements/Link";
 import { Container } from "@/elements/Container";
 import { t } from "@/lib/i18n";
 
 /**
  * Common header (shared across all pages): logo left (clickable → home) +
- * purple "Login" button right. Mobile-first: logo scales up on desktop.
+ * purple "Login" button right (→ /login). Mobile-first: logo scales up on desktop.
  */
 export function Header() {
   return (
@@ -18,8 +19,11 @@ export function Header() {
           className="h-9 w-auto min-w-[96px] md:h-12 md:min-w-[120px]"
           priority
         />
-        <Button className="shrink-0 rounded bg-pri-purple px-4 py-2 text-sm font-semibold text-white hover:bg-pri-purple/90 md:px-5">
-          {t("home.login")}
+        <Button
+          asChild
+          className="shrink-0 rounded bg-pri-purple px-4 py-2 text-sm font-semibold text-white hover:bg-pri-purple/90 md:px-5"
+        >
+          <Link href="/login">{t("home.login")}</Link>
         </Button>
       </Container>
     </header>
