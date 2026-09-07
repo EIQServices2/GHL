@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { t } from "@/lib/i18n";
 import type { StateOption, TduRate } from "@/types/home";
 
@@ -7,11 +10,16 @@ export interface HomePlatformProps {
 }
 
 /**
- * Energy Pricing Intelligence Platform: state selector + TDU bar chart.
- * Matches powerrateindex.org platform section.
+ * Energy Pricing Intelligence Platform: interactive state selector + TDU bar chart.
+ * Clicking a state chip switches the active state (GHL onClick → setState).
+ * Chart title: "TDU based on 1000 kWh" for TX, "Utility" otherwise.
  */
 export function HomePlatform({ states, tduRates }: HomePlatformProps) {
+  const [activeId, setActiveId] = useState(
+    states.find((s) => s.active)?.id ?? states[0]?.id ?? "TX"
+  );
   const maxRate = Math.max(...tduRates.map((r) => r.rate));
+  const isTx = activeId === "TX";
 
   return (
     <section className="w-full bg-[#f8f9fa] py-12">
@@ -27,23 +35,25 @@ export function HomePlatform({ states, tduRates }: HomePlatformProps) {
           {/* State selector */}
           <div className="flex flex-wrap gap-2">
             {states.map((s) => (
-              <span
+              <button
                 key={s.id}
-                className={`rounded px-3 py-1.5 text-sm ${
-                  s.active
+                type="button"
+                onClick={() => setActiveId(s.id)}
+                className={`cursor-pointer rounded px-3 py-1.5 text-sm transition-colors ${
+                  s.id === activeId
                     ? "bg-[#121f27] text-white"
-                    : "bg-white text-[#666] border border-[#e5e5e5]"
+                    : "border border-[#e5e5e5] bg-white text-[#666] hover:border-[#121f27]"
                 }`}
               >
                 {s.name}
-              </span>
+              </button>
             ))}
           </div>
 
           {/* Bar chart */}
           <div>
             <h3 className="mb-4 text-lg font-semibold text-[#121f27]">
-              {t("home.avgRateByTdu")}
+              {isTx ? t("home.avgRateByTdu") : t("home.avgRateByUtility")}
             </h3>
             <div className="space-y-3">
               {tduRates.map((r) => (
@@ -53,7 +63,7 @@ export function HomePlatform({ states, tduRates }: HomePlatformProps) {
                   </span>
                   <div className="h-6 flex-1 rounded bg-[#e9ecef]">
                     <div
-                      className="h-6 rounded bg-pri-purple"
+                      className="h-6 rounded bg-pri-purple transition-all duration-500"
                       style={{ width: `${(r.rate / maxRate) * 100}%` }}
                     />
                   </div>
