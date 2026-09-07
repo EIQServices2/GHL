@@ -1,0 +1,7 @@
+{
+  "utility": { "slug": "aepnorth", "name": "AEP Texas North", "code": "AEPN" },
+  "previousRate": 5.1234,
+  "currentRate": 5.1001,
+  "updatedAsOf": "2026-09-01",
+  "currency": "USD"
+}

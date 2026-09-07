@@ -1,0 +1,15 @@
+{
+  "name": "ghl",
+  "version": "0.1.0",
+  "private": true,
+  "description": "EIQ-GHL1 — GHL decommission: NextJS frontend clone of TDU rate-change pages, hosted on powerrateindex.org",
+  "workspaces": [
+    "web",
+    "gateway"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=web",
+    "build": "npm run build --workspace=web",
+    "lint": "npm run lint --workspace=web"
+  }
+}

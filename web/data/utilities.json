@@ -1,0 +1,8 @@
+[
+  { "slug": "oncor", "name": "Oncor", "code": "ONCR" },
+  { "slug": "centerpoint", "name": "CenterPoint Energy", "code": "CNPT" },
+  { "slug": "aepnorth", "name": "AEP Texas North", "code": "AEPN" },
+  { "slug": "aepcentral", "name": "AEP Texas Central", "code": "AEPC" },
+  { "slug": "tnmp", "name": "Texas New Mexico Power", "code": "TNMP" },
+  { "slug": "lubbock", "name": "Lubbock Power & Light", "code": "LPNL" }
+]

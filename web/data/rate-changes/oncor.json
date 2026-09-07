@@ -1,0 +1,7 @@
+{
+  "utility": { "slug": "oncor", "name": "Oncor", "code": "ONCR" },
+  "previousRate": 4.1234,
+  "currentRate": 4.0987,
+  "updatedAsOf": "2026-09-01",
+  "currency": "USD"
+}
