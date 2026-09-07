@@ -86,6 +86,22 @@ export const translations: Record<Locale, Record<string, string>> = {
     "notFound.title": "Page not found",
     "notFound.home": "Back to Home",
 
+    // Auth (login / reset password)
+    "auth.signIn": "Sign In",
+    "auth.username": "Username",
+    "auth.password": "Password",
+    "auth.forgotPassword": "Forgot your password?",
+    "auth.resetPassword": "Reset Password",
+    "auth.resetTitle": "Reset your password",
+    "auth.resetSubtitle": "Enter your username and we'll send you a code to reset your password.",
+    "auth.sendCode": "Send code",
+    "auth.newPassword": "New password",
+    "auth.confirmPassword": "Confirm password",
+    "auth.submit": "Submit",
+    "auth.backToSignIn": "Back to Sign In",
+    "auth.code": "Confirmation code",
+    "auth.enterCode": "Enter the code we sent you",
+
     // Metadata
     "meta.title": "PowerRateIndex | Retail Energy Pricing & Competitive Analysis",
     "meta.titleTemplate": "%s | PowerRateIndex",
@@ -176,6 +192,22 @@ export const translations: Record<Locale, Record<string, string>> = {
     // 404
     "notFound.title": "Página no encontrada",
     "notFound.home": "Volver al inicio",
+
+    // Auth (login / reset password)
+    "auth.signIn": "Iniciar sesión",
+    "auth.username": "Nombre de usuario",
+    "auth.password": "Contraseña",
+    "auth.forgotPassword": "¿Olvidó su contraseña?",
+    "auth.resetPassword": "Restablecer contraseña",
+    "auth.resetTitle": "Restablezca su contraseña",
+    "auth.resetSubtitle": "Ingrese su nombre de usuario y le enviaremos un código para restablecer su contraseña.",
+    "auth.sendCode": "Enviar código",
+    "auth.newPassword": "Nueva contraseña",
+    "auth.confirmPassword": "Confirmar contraseña",
+    "auth.submit": "Enviar",
+    "auth.backToSignIn": "Volver a iniciar sesión",
+    "auth.code": "Código de confirmación",
+    "auth.enterCode": "Ingrese el código que le enviamos",
 
     // Metadata
     "meta.title": "PowerRateIndex | Precios de energía minorista y análisis competitivo",
