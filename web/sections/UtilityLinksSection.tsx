@@ -13,7 +13,7 @@ export interface UtilityLinksSectionProps {
  */
 export function UtilityLinksSection({ utilities }: UtilityLinksSectionProps) {
   return (
-    <section className="w-full bg-pri-surface py-12">
+    <section className="w-full bg-pri-bg-light py-12">
       <div className="mx-auto max-w-[1440px] px-4 text-center">
         <h2 className="text-2xl font-bold text-pri-ink md:text-3xl">
           {t("home.utilityLinksTitle")}
