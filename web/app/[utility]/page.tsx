@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getPageData, getUtilitySlugs, getUtilities } from "@/lib/data";
+import { getData } from "@/lib/data";
 import { t } from "@/lib/i18n";
 import { HeaderSection } from "@/sections/HeaderSection";
 import { HeroSection } from "@/sections/HeroSection";
@@ -11,7 +11,7 @@ import { UtilityLinksSection } from "@/sections/UtilityLinksSection";
 import { FooterSection } from "@/sections/FooterSection";
 
 export function generateStaticParams(): { utility: string }[] {
-  return getUtilitySlugs().map((slug) => ({ utility: slug }));
+  return getData().utilities.map((u) => ({ utility: u.slug }));
 }
 
 export async function generateMetadata({
@@ -20,16 +20,16 @@ export async function generateMetadata({
   params: Promise<{ utility: string }>;
 }): Promise<Metadata> {
   const { utility } = await params;
-  const data = getPageData(utility);
-  if (!data) return {};
+  const rc = getData().rateChanges.find((r) => r.utility.slug === utility);
+  if (!rc) return {};
 
-  const name = data.rateChange.utility.name;
+  const name = rc.utility.name;
   return {
     title: t("meta.utilityTitle", "en", { name }),
     description: t("meta.utilityDescription", "en", {
       name,
-      previous: data.rateChange.previousRate,
-      current: data.rateChange.currentRate,
+      previous: rc.previousRate,
+      current: rc.currentRate,
     }),
     alternates: { canonical: `/${utility}` },
   };
@@ -41,20 +41,27 @@ export default async function UtilityPage({
   params: Promise<{ utility: string }>;
 }) {
   const { utility } = await params;
-  const data = getPageData(utility);
+  const { rateChanges, utilities } = getData();
+  const rateChange = rateChanges.find((r) => r.utility.slug === utility);
 
-  if (!data) {
+  if (!rateChange) {
     notFound();
   }
 
   return (
     <main className="flex flex-1 flex-col">
       <HeaderSection />
-      <HeroSection rateChange={data.rateChange} />
-      <RateComparisonSection rateChange={data.rateChange} />
-      <WhyItMattersSection valueProps={data.valueProps} />
-      <TrialFormSection cta={data.cta} />
-      <UtilityLinksSection utilities={getUtilities()} />
+      <HeroSection rateChange={rateChange} />
+      <RateComparisonSection rateChange={rateChange} />
+      <WhyItMattersSection
+        valueProps={[
+          "rateChange.valueProp1",
+          "rateChange.valueProp2",
+          "rateChange.valueProp3",
+        ]}
+      />
+      <TrialFormSection />
+      <UtilityLinksSection utilities={utilities} />
       <FooterSection />
     </main>
   );

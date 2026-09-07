@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getHomeData } from "@/lib/data";
+import { getData } from "@/lib/data";
 import { t } from "@/lib/i18n";
 import { HomeHeader } from "@/sections/HomeHeader";
 import { HomeHero } from "@/sections/HomeHero";
@@ -16,17 +16,17 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const data = getHomeData();
+  const { home } = getData();
 
   return (
     <main className="flex flex-1 flex-col">
       <HomeHeader />
-      <HomeHero stats={data.stats} />
+      <HomeHero stats={home.stats} />
       <HomeScrape />
-      <HomeFeatures cards={data.featureCards} />
-      <HomePlatform states={data.states} tduRates={data.tduRates} />
+      <HomeFeatures cards={home.featureCards} />
+      <HomePlatform states={home.states} tduRates={home.tduRates} />
       <HomeContact />
-      <UtilityLinksSection utilities={data.utilities} />
+      <UtilityLinksSection utilities={home.utilities} />
       <FooterSection />
     </main>
   );

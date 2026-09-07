@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { t } from "@/lib/i18n";
+import { Button } from "@/elements/Button";
 import type { StateOption, TduRate } from "@/types/home";
 
 export interface HomePlatformProps {
@@ -35,20 +36,20 @@ export function HomePlatform({ states, tduRates }: HomePlatformProps) {
           {/* State selector */}
           <div className="flex flex-wrap gap-2" role="tablist" aria-label="State selector">
             {states.map((s) => (
-              <button
+              <Button
                 key={s.id}
                 type="button"
                 role="tab"
                 aria-selected={s.id === activeId}
                 onClick={() => setActiveId(s.id)}
-                className={`cursor-pointer rounded px-3 py-1.5 text-sm transition-colors ${
+                className={`rounded px-3 py-1.5 text-sm transition-colors ${
                   s.id === activeId
                     ? "bg-pri-ink text-white"
                     : "border border-pri-border bg-white text-pri-ink-muted hover:border-pri-ink"
                 }`}
               >
                 {s.name}
-              </button>
+              </Button>
             ))}
           </div>
 

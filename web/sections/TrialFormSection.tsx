@@ -6,18 +6,13 @@ import { t } from "@/lib/i18n";
 import { Button } from "@/elements/Button";
 import { Modal } from "@/elements/Modal";
 import { ContactForm } from "@/components/ContactForm";
-import type { CtaConfig } from "@/types";
-
-export interface TrialFormSectionProps {
-  cta: CtaConfig;
-}
 
 /**
  * CTA section: deep navy background (GHL #221A76), left-aligned text,
  * dashboard screenshot as <img> (80% width, centered), purple button.
  * Button opens a modal with the contact form (GHL openPopup behavior).
  */
-export function TrialFormSection({ cta }: TrialFormSectionProps) {
+export function TrialFormSection() {
   const [open, setOpen] = useState(false);
 
   return (
@@ -38,7 +33,7 @@ export function TrialFormSection({ cta }: TrialFormSectionProps) {
               onClick={() => setOpen(true)}
               className="rounded-full bg-pri-purple px-5 py-4 text-sm font-bold uppercase tracking-[2px] text-white hover:bg-pri-purple/90"
             >
-              {t(cta.labelKey)}
+              {t("rateChange.cta")}
             </Button>
           </div>
         </div>

@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { X } from "lucide-react";
+import { Button } from "@/elements/Button";
 
 export interface ModalProps {
   open: boolean;
@@ -41,18 +42,18 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
         className="relative w-full max-w-[720px] rounded-lg bg-white p-6 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <button
+        <Button
           type="button"
+          variant="ghost"
+          size="icon"
           onClick={onClose}
           aria-label="Close"
-          className="absolute right-3 top-3 cursor-pointer rounded p-1 text-pri-ink-muted hover:bg-gray-100"
+          className="absolute right-3 top-3 text-pri-ink-muted hover:bg-gray-100"
         >
           <X className="h-5 w-5" />
-        </button>
+        </Button>
         {title && (
-          <h2 className="mb-4 pr-8 text-xl font-bold text-[#121f27]">
-            {title}
-          </h2>
+          <h2 className="mb-4 pr-8 text-xl font-bold text-pri-ink">{title}</h2>
         )}
         {children}
       </div>

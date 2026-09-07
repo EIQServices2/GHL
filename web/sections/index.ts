@@ -8,7 +8,7 @@ export {
   WhyItMattersSection,
   type WhyItMattersSectionProps,
 } from "./WhyItMattersSection";
-export { TrialFormSection, type TrialFormSectionProps } from "./TrialFormSection";
+export { TrialFormSection } from "./TrialFormSection";
 export { FooterSection } from "./FooterSection";
 export { HomeHeader } from "./HomeHeader";
 export { HomeHero, type HomeHeroProps } from "./HomeHero";

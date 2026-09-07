@@ -1,23 +1,19 @@
 import Image from "next/image";
 import { t } from "@/lib/i18n";
+import { getData } from "@/lib/data";
 import { Link } from "@/elements/Link";
 import { Logo } from "@/components/Logo";
-
-const products = [
-  { label: "PowerLego", href: "https://www.powerlego.com/" },
-  { label: "EIQhome", href: "https://eiqhome.com/" },
-  { label: "EIQShopping", href: "https://eiqshopping.com/" },
-  { label: "ESIID.io", href: "https://esiid.io/" },
-  { label: "BillReader", href: "https://www.billreader.com/" },
-  { label: "Personalized.Energy", href: "https://www.personalized.energy/" },
-];
 
 /**
  * Ditto footer from powerrateindex.org (#uni-ft). White bg, 4 columns:
  * Products / Support & Contact / Developers / Follow us on, plus logo,
  * AWS badge, eIQdigital logo + tagline, and copyright bar.
+ * Links/URLs come from data/site.json (single data accessor).
  */
 export function FooterSection() {
+  const { site } = getData();
+  const { footer } = site;
+
   return (
     <footer className="w-full bg-white py-[50px] text-pri-ink">
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-8 px-4 md:grid-cols-[1fr_2fr]">
@@ -33,11 +29,7 @@ export function FooterSection() {
             />
           </div>
           <div>
-            <Link
-              href="https://aws.amazon.com/what-is-cloud-computing"
-              target="_blank"
-              rel="noopener"
-            >
+            <Link href={footer.aws.href} target="_blank" rel="noopener">
               <Image
                 src="/images/powered-by-aws.png"
                 alt="Powered by AWS Cloud Computing"
@@ -48,11 +40,7 @@ export function FooterSection() {
             </Link>
           </div>
           <div>
-            <Link
-              href="https://www.eiqdigital.com/"
-              target="_blank"
-              rel="noopener"
-            >
+            <Link href={footer.eiqdigital.href} target="_blank" rel="noopener">
               <Image
                 src="/images/eiqdigital-logo.png"
                 alt="eIQdigital"
@@ -77,7 +65,7 @@ export function FooterSection() {
               {t("footer.products")}
             </h5>
             <ul className="flex flex-wrap gap-x-5 gap-y-2 md:block">
-              {products.map((p) => (
+              {footer.products.map((p) => (
                 <li key={p.label} className="md:my-2">
                   <Link
                     href={p.href}
@@ -98,7 +86,7 @@ export function FooterSection() {
             <ul className="flex flex-wrap gap-x-5 gap-y-2 md:block">
               <li className="md:my-2">
                 <Link
-                  href="https://www.powerrateindex.org/contact-us"
+                  href={footer.support.href}
                   target="_blank"
                   rel="noopener"
                   className="text-[15px] text-pri-ink-muted no-underline"
@@ -115,7 +103,7 @@ export function FooterSection() {
             <ul className="flex flex-wrap gap-x-5 gap-y-2 md:block">
               <li className="md:my-2">
                 <Link
-                  href="https://documenter.getpostman.com/view/4831254/SzKYPH3c"
+                  href={footer.developers.href}
                   target="_blank"
                   rel="noopener"
                   className="text-[15px] text-pri-ink-muted no-underline"
@@ -130,52 +118,48 @@ export function FooterSection() {
               {t("footer.followUs")}
             </h5>
             <ul className="flex gap-5">
-              <li>
-                <Link
-                  href="https://www.facebook.com/p/eIQdigital-61552099297028/"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="Facebook"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="36"
-                    height="36"
-                    viewBox="0 0 36 36"
-                    role="img"
+              {footer.social.map((s) => (
+                <li key={s.label}>
+                  <Link
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener"
+                    aria-label={s.label}
                   >
-                    <title>Facebook</title>
-                    <path
-                      fill="#000"
-                      fillRule="nonzero"
-                      d="M18 0C8.075 0 0 8.075 0 18s8.075 18 18 18 18-8.075 18-18S27.925 0 18 0m4.476 18.634h-2.928v10.439h-4.34v-10.44h-2.062v-3.688h2.063v-2.386c0-1.71.812-4.38 4.379-4.38l3.214.013v3.58h-2.334c-.38 0-.92.19-.92 1.005v2.168h3.307z"
-                    />
-                  </svg>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://www.linkedin.com/company/eiqdigital/"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="LinkedIn"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="36"
-                    height="36"
-                    viewBox="0 0 36 36"
-                    role="img"
-                  >
-                    <title>LinkedIn</title>
-                    <path
-                      fill="#000"
-                      fillRule="evenodd"
-                      d="M18 0c9.934 0 18 8.066 18 18s-8.066 18-18 18S0 27.934 0 18 8.066 0 18 0m-5.628 28.116V14.059H7.7v14.057zm16.849 0v-8.061c0-4.318-2.306-6.327-5.38-6.327-2.479 0-3.59 1.364-4.21 2.321v-1.99h-4.673c.062 1.319 0 14.057 0 14.057h4.672v-7.85c0-.42.03-.84.154-1.141.337-.84 1.107-1.709 2.397-1.709 1.69 0 2.367 1.29 2.367 3.179v7.52zM10.067 7.28c-1.599 0-2.643 1.051-2.643 2.429 0 1.349 1.013 2.429 2.581 2.429h.03c1.63 0 2.644-1.08 2.644-2.43-.03-1.377-1.014-2.428-2.612-2.428"
-                    />
-                  </svg>
-                </Link>
-              </li>
+                    {s.label === "Facebook" ? (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="36"
+                        height="36"
+                        viewBox="0 0 36 36"
+                        role="img"
+                      >
+                        <title>Facebook</title>
+                        <path
+                          fill="#000"
+                          fillRule="nonzero"
+                          d="M18 0C8.075 0 0 8.075 0 18s8.075 18 18 18 18-8.075 18-18S27.925 0 18 0m4.476 18.634h-2.928v10.439h-4.34v-10.44h-2.062v-3.688h2.063v-2.386c0-1.71.812-4.38 4.379-4.38l3.214.013v3.58h-2.334c-.38 0-.92.19-.92 1.005v2.168h3.307z"
+                        />
+                      </svg>
+                    ) : (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="36"
+                        height="36"
+                        viewBox="0 0 36 36"
+                        role="img"
+                      >
+                        <title>LinkedIn</title>
+                        <path
+                          fill="#000"
+                          fillRule="evenodd"
+                          d="M18 0c9.934 0 18 8.066 18 18s-8.066 18-18 18S0 27.934 0 18 8.066 0 18 0m-5.628 28.116V14.059H7.7v14.057zm16.849 0v-8.061c0-4.318-2.306-6.327-5.38-6.327-2.479 0-3.59 1.364-4.21 2.321v-1.99h-4.673c.062 1.319 0 14.057 0 14.057h4.672v-7.85c0-.42.03-.84.154-1.141.337-.84 1.107-1.709 2.397-1.709 1.69 0 2.367 1.29 2.367 3.179v7.52zM10.067 7.28c-1.599 0-2.643 1.051-2.643 2.429 0 1.349 1.013 2.429 2.581 2.429h.03c1.63 0 2.644-1.08 2.644-2.43-.03-1.377-1.014-2.428-2.612-2.428"
+                        />
+                      </svg>
+                    )}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

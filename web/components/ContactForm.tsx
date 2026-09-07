@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { t } from "@/lib/i18n";
+import { Button } from "@/elements/Button";
 
 export interface ContactFormProps {
   onSubmitted?: () => void;
@@ -91,12 +92,12 @@ export function ContactForm({ onSubmitted }: ContactFormProps) {
           className="w-full rounded border border-pri-border px-3 py-2 text-sm"
         />
       </div>
-      <button
+      <Button
         type="submit"
-        className="mt-6 w-full cursor-pointer rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white sm:w-auto"
+        className="mt-6 w-full rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white sm:w-auto"
       >
         {t("home.formSubmit")}
-      </button>
+      </Button>
     </form>
   );
 }

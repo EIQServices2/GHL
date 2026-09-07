@@ -1,6 +1,6 @@
 export type { Utility } from "./utility";
 export type { RateChange } from "./rate";
-export type { CtaConfig, FooterConfig, RateChangePageData } from "./page";
+export type { CtaConfig } from "./page";
 export type {
   HomeStats,
   StateOption,
@@ -8,3 +8,10 @@ export type {
   FeatureCard,
   HomePageData,
 } from "./home";
+export type {
+  SiteConfig,
+  FooterProduct,
+  FooterLink,
+  SocialLink,
+  AuthConfig,
+} from "./site";
