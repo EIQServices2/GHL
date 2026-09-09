@@ -6,16 +6,11 @@ export interface RateCardProps {
   variant?: "default" | "current";
 }
 
-// Rate display card; `current` variant = purple border + text.
+// Rate display (unboxed comparison); `current` variant = purple text.
 export function RateCard({ label, value, variant = "default" }: RateCardProps) {
   const isCurrent = variant === "current";
   return (
-    <div
-      className={cn(
-        "rounded-xl border bg-card p-6 text-center",
-        isCurrent ? "border-pri-purple" : "border-border"
-      )}
-    >
+    <div className="text-center">
       <p className="text-sm font-medium text-pri-muted">{label}</p>
       <p
         className={cn(

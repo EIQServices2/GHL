@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { TrendingDown, TrendingUp } from "lucide-react";
 import { t } from "@/lib/i18n";
 import { Container } from "@/elements/Container";
 import { RateCard } from "@/components/RateCard";
@@ -17,6 +17,7 @@ export function RateComparisonSection({
   rateChange,
 }: RateComparisonSectionProps) {
   const decreased = rateChange.currentRate < rateChange.previousRate;
+  const TrendIcon = decreased ? TrendingDown : TrendingUp;
 
   return (
     <section className="w-full py-12">
@@ -26,12 +27,9 @@ export function RateComparisonSection({
             label={t("RateComparison.PreviousRate")}
             value={formatRate(rateChange.previousRate)}
           />
-          <Image
-            src="/images/icon-arrow-down.png"
-            alt={decreased ? t("RateComparison.Decreased") : t("RateComparison.Increased")}
-            width={527}
-            height={527}
-            className={`mx-auto h-8 w-8 ${decreased ? "" : "rotate-180"}`}
+          <TrendIcon
+            aria-label={decreased ? t("RateComparison.Decreased") : t("RateComparison.Increased")}
+            className="mx-auto h-8 w-8 text-pri-purple"
           />
           <RateCard
             label={`${t("RateComparison.UpdatedAsOf")} ${rateChange.updatedAsOf}`}
