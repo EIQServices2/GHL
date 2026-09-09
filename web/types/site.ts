@@ -20,7 +20,6 @@ export interface AuthConfig {
 }
 
 export interface SiteConfig {
-  ctaHref: string;
   footer: {
     products: FooterProduct[];
     support: FooterLink;

@@ -30,21 +30,9 @@
     { "name": "Texas New Mexico Power (TNMP)", "rate": 16.05 }
   ],
   "featureCards": [
-    {
-      "icon": "feature_analytics.png",
-      "text": "Verify price competitiveness vs. key competitors and the market"
-    },
-    {
-      "icon": "feature_data_research.png",
-      "text": "Identify pricing \u201cSweet Spots\u201d and attractive competitive comparisons"
-    },
-    {
-      "icon": "feature_consulting.png",
-      "text": "Use data to create compelling Sales and Marketing messaging"
-    },
-    {
-      "icon": "feature_risk_analytics.png",
-      "text": "Effectively audits TOS and EFL against posted plan rates"
-    }
+    { "icon": "feature_analytics.png", "textKey": "home.featureCard1" },
+    { "icon": "feature_data_research.png", "textKey": "home.featureCard2" },
+    { "icon": "feature_consulting.png", "textKey": "home.featureCard3" },
+    { "icon": "feature_risk_analytics.png", "textKey": "home.featureCard4" }
   ]
 }

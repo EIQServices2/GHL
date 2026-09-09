@@ -21,7 +21,7 @@ export function HomeFeatures({ cards }: HomeFeaturesProps) {
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c) => (
             <div
-              key={c.text}
+              key={c.textKey}
               className="rounded-lg border border-pri-border p-6 text-center shadow-sm"
             >
               <Image
@@ -31,7 +31,7 @@ export function HomeFeatures({ cards }: HomeFeaturesProps) {
                 height={80}
                 className="mx-auto h-16 w-16"
               />
-              <p className="mt-4 text-[15px] text-pri-ink-muted">{c.text}</p>
+              <p className="mt-4 text-[15px] text-pri-ink-muted">{t(c.textKey)}</p>
             </div>
           ))}
         </div>

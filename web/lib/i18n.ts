@@ -14,7 +14,6 @@ export const translations: Record<Locale, Record<string, string>> = {
     "rateChange.subtitle":
       "Stay on top of utility delivery rate updates and competitor pricing changes with PowerRateIndex.",
     "rateChange.previousRate": "Previous Rate",
-    "rateChange.currentRate": "Current",
     "rateChange.updatedAsOf": "Updated as of",
     "rateChange.decreased": "Rate decreased",
     "rateChange.increased": "Rate increased",
@@ -47,10 +46,17 @@ export const translations: Record<Locale, Record<string, string>> = {
       "Continually monitors and updates utilities\u2019 Price-to-Compare",
     "home.featuresTitle":
       "PowerRateIndex is a critical tool for making effective Pricing, Sales and Marketing decisions",
+    "home.featureCard1":
+      "Verify price competitiveness vs. key competitors and the market",
+    "home.featureCard2":
+      "Identify pricing \u201cSweet Spots\u201d and attractive competitive comparisons",
+    "home.featureCard3":
+      "Use data to create compelling Sales and Marketing messaging",
+    "home.featureCard4":
+      "Effectively audits TOS and EFL against posted plan rates",
     "home.platformTitle": "Energy Pricing Intelligence Platform",
     "home.platformSubtitle":
       "Our platform updates daily, ensuring users have real-time insights into competitive pricing, helping firms optimize their strategies and stay ahead in the evolving energy market",
-    "home.avgRate": "Avg Rate",
     "home.avgRateByTdu": "Today's Avg Rate by TDU based on 1000 kWh",
     "home.avgRateByUtility": "Today's Avg Rate by Utility",
     "home.contactTitle": "Explore the Future of Energy Pricing Analysis",
@@ -66,9 +72,6 @@ export const translations: Record<Locale, Record<string, string>> = {
     "home.formSuccessBody": "We will contact you ASAP.",
     "home.utilityLinksTitle": "Explore Utility Rate Changes",
 
-    // Form
-    "form.emailPlaceholder": "Enter your email",
-
     // Footer
     "footer.rights": "2025 © EIQdigital. All Rights Reserved.",
     "footer.tagline1": "AI-First, Data and Technology Leader.",
@@ -80,9 +83,6 @@ export const translations: Record<Locale, Record<string, string>> = {
     "footer.followUs": "Follow us on",
     "footer.contactUs": "Contact Us",
     "footer.documentation": "Documentation",
-
-    // Common
-    "common.loading": "Loading…",
 
     // 404
     "notFound.title": "Page not found",
@@ -123,7 +123,6 @@ export const translations: Record<Locale, Record<string, string>> = {
     "rateChange.subtitle":
       "Manténgase al día con las actualizaciones de tarifas de entrega de servicios públicos y los cambios de precios de la competencia con PowerRateIndex.",
     "rateChange.previousRate": "Tarifa anterior",
-    "rateChange.currentRate": "Actual",
     "rateChange.updatedAsOf": "Actualizado a partir de",
     "rateChange.decreased": "Tarifa disminuida",
     "rateChange.increased": "Tarifa aumentada",
@@ -156,10 +155,17 @@ export const translations: Record<Locale, Record<string, string>> = {
       "Monitorea y actualiza continuamente el precio de comparación de los servicios públicos",
     "home.featuresTitle":
       "PowerRateIndex es una herramienta fundamental para tomar decisiones efectivas de precios, ventas y marketing",
+    "home.featureCard1":
+      "Verifique la competitividad de precios frente a los competidores clave y el mercado",
+    "home.featureCard2":
+      "Identifique los \u201cpuntos óptimos\u201d de precios y comparaciones competitivas atractivas",
+    "home.featureCard3":
+      "Use los datos para crear mensajes convincentes de ventas y marketing",
+    "home.featureCard4":
+      "Audita eficazmente TOS y EFL frente a las tarifas de planes publicadas",
     "home.platformTitle": "Plataforma de inteligencia de precios de energía",
     "home.platformSubtitle":
       "Nuestra plataforma se actualiza diariamente, garantizando información en tiempo real sobre precios competitivos, ayudando a las empresas a optimizar sus estrategias y mantenerse a la vanguardia en el mercado energético en evolución",
-    "home.avgRate": "Tarifa promedio",
     "home.avgRateByTdu": "Tarifa promedio de hoy por TDU basada en 1000 kWh",
     "home.avgRateByUtility": "Tarifa promedio de hoy por servicio público",
     "home.contactTitle": "Explore el futuro del análisis de precios de energía",
@@ -175,9 +181,6 @@ export const translations: Record<Locale, Record<string, string>> = {
     "home.formSuccessBody": "Nos pondremos en contacto contigo lo antes posible.",
     "home.utilityLinksTitle": "Explore los cambios de tarifas de servicios públicos",
 
-    // Form
-    "form.emailPlaceholder": "Ingrese su correo electrónico",
-
     // Footer
     "footer.rights": "2025 © EIQdigital. Todos los derechos reservados.",
     "footer.tagline1": "Líder en IA, datos y tecnología.",
@@ -189,9 +192,6 @@ export const translations: Record<Locale, Record<string, string>> = {
     "footer.followUs": "Síguenos en",
     "footer.contactUs": "Contáctenos",
     "footer.documentation": "Documentación",
-
-    // Common
-    "common.loading": "Cargando…",
 
     // 404
     "notFound.title": "Página no encontrada",

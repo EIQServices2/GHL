@@ -20,7 +20,7 @@ export interface TduRate {
 
 export interface FeatureCard {
   icon: string;
-  text: string;
+  textKey: string;
 }
 
 export interface HomePageData {
