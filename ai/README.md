@@ -40,10 +40,10 @@ Current work, blockers, pending decisions live in `~/Project_State/D0045/` (not 
 ## Key conventions (user-mandated)
 
 - **Types** in `web/types/` — one file per domain, plain interfaces, barrel `index.ts`.
-- **i18n** via `web/lib/i18n.ts` — `locales` const + `translations: Record<Locale, Record<string,string>>`, human-readable keys, `{var}` interpolation, `en` + `es` locales. Never hardcode English.
+- **i18n** via `web/lib/i18n.ts` — `locales` const + `translations: Record<Locale, Record<string,string>>`, `en` + `es` locales, `{var}` interpolation. Keys are uniform `Section.Key` (PascalCase, e.g. `WhyItMatter.Title`). Never hardcode English.
 - **Non-translatable config** in `web/data/site.json` (URLs, brand names, footer products, auth endpoints).
 - **Single data accessor** — `getData()` in `web/lib/data.ts` is the ONLY way to read `/data/*.json` (mimics a server API). No scattered imports.
-- **Dummy data** in `web/data/` — `home.json` + `utilities.json` + `rate-changes/{slug}.json` + `site.json`.
+- **Utility data** — one JSON per utility in `web/data/utilities/{slug}.json` (identity + rates + avgRate + valueProps + optional overrides). Adding a utility = drop one JSON, no code change.
 - **Static export** (`output: 'export'`) → S3 + CloudFront / Amplify.
 - **Extensible** — one `[utility]/page.tsx` driven by `generateStaticParams` + `fs.readdirSync` (dynamic slugs), not N hardcoded pages.
 - **4-layer architecture** — page → sections → components → elements (see `architecture.md`).

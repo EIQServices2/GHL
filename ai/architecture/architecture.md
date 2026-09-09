@@ -46,22 +46,20 @@ elements/       # atomic elements
   Modal.tsx             # reusable dialog (backdrop/Escape/X close, scrollable)
   Container.tsx         # shared content container (wide/narrow/form) — alignment
 
-data/           # dummy JSON (source of truth for this iteration)
-  home.json             # stats, states, tduRates, featureCards
-  utilities.json        # 6 utilities
-  rate-changes/{slug}.json
-  site.json             # non-translatable config: ctaHref, footer links, social, auth
+data/           # JSON (source of truth for this iteration)
+  home.json             # stats, states, featureCards
+  utilities/{slug}.json # one file per utility: identity + rates + avgRate + valueProps + overrides
+  site.json             # non-translatable config: footer links, social, auth
 
 types/          # domain types (one file per domain)
   utility.ts            # slug: string (dynamic — no hardcoded union)
-  rate.ts
-  page.ts
+  rate.ts               # RateChange + UtilityOverrides
   home.ts
   site.ts               # SiteConfig / AuthConfig
   index.ts
 
 lib/            # i18n, data access, utils, hooks
-  i18n.ts               # en + es locales, human-readable keys, {var} interpolation
+  i18n.ts               # en + es locales, Section.Key keys, {var} interpolation
   data.ts               # single getData() accessor → AppData (mimics API)
   utils.ts              # cn() class merge
   useCountUp.ts         # count-up animation hook (mirrors GHL CountUp)
@@ -80,14 +78,15 @@ lib/            # i18n, data access, utils, hooks
 
 ## Data access (single accessor)
 
-`lib/data.ts` exposes **one** function — `getData()` — returning `AppData { utilities, rateChanges, home, site }`. All `/data/*.json` is read through this function only (mimics a server API). No scattered imports, no workarounds.
+`lib/data.ts` exposes **one** function — `getData()` — returning `AppData { utilities, rateChanges, tduRates, home, site }`. All `/data/*.json` is read through this function only (mimics a server API). No scattered imports, no workarounds.
 
-- **Dynamic slugs:** `getData()` uses `fs.readdirSync` on `data/rate-changes/` to discover utilities at build time. Adding a utility = drop a JSON file (no code change).
+- **Dynamic slugs:** `getData()` uses `fs.readdirSync` on `data/utilities/` to discover utilities at build time. Adding a utility = drop a JSON file (no code change).
+- **Derived data:** `utilities` and `tduRates` are derived from the utility JSONs (not stored separately).
 - **i18n vs data:** translatable strings live in `lib/i18n.ts`; non-translatable config (URLs, brand names, footer products, auth endpoints) lives in `data/site.json`.
 
 ## Extensibility
 
-- **Add a utility** → add one JSON file in `data/rate-changes/` + one entry in `data/utilities.json`. No code change (page is data-driven via `generateStaticParams`).
+- **Add a utility** → drop one JSON file in `data/utilities/`. No code change (page is data-driven via `generateStaticParams`).
 - **Add a section** → new file in `sections/`, export from `sections/index.ts`, compose in the page.
 - **Add a component** → new file in `components/`, export from `components/index.ts`.
 - **Add an element** → new file in `elements/`, export from `elements/index.ts`.

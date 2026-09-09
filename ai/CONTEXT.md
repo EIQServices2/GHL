@@ -14,7 +14,7 @@ Decommission GoHighLevel (GHL) and rebuild its TDU rate-change notification page
 
 - **Frontend:** Next.js 16.2.3 (App Router, static export), TypeScript, Tailwind CSS 4, shadcn/ui (radix-nova), lucide-react
 - **i18n:** `lib/i18n.ts` (en + es locales, `{var}` interpolation)
-- **Data:** dummy JSON in `web/data/` served through single `getData()` accessor (no Firestore wiring yet)
+- **Data:** JSON in `web/data/` served through single `getData()` accessor (no Firestore wiring yet)
 - **Hosting:** S3 + CloudFront / Amplify → `powerrateindex.org`
 
 ## Monorepo layout
