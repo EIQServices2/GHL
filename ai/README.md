@@ -28,10 +28,11 @@ GHL/
 |---|---|
 | Architecture | `ai/architecture/architecture.md` |
 | Deployment plan | `ai/architecture/deployment-plan.md` |
-| Ditto-clone spec | `ai/reference/ghl-ditto-spec.md` |
-| Source HTML (GHL) | `ai/reference/ghl-aepcentral-source.html` |
+| Design tokens | `DESIGN.md` (repo root) |
 
 **One source of truth per subject.** If a fact appears twice, the canonical doc wins.
+
+> Ditto-clone reference material (GHL source HTML, spec, test images, screenshots) is archived in the ticket data folder `~/Dev-Work-Local/D0045--EIQ-GHL/EIQ-GHL1/` (datetime-stamped), not in this repo.
 
 ## Project state
 
