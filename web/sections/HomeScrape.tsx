@@ -2,10 +2,7 @@ import Image from "next/image";
 import { t } from "@/lib/i18n";
 import { Container } from "@/elements/Container";
 
-/**
- * Data scraping section: light lavender bg, illustration left + 3 bullets right.
- * Matches powerrateindex.org "continually scrapes" section.
- */
+// Data scraping section: light lavender bg, illustration left + 3 bullets right.
 export function HomeScrape() {
   return (
     <section className="w-full bg-pri-bg-light py-12">

@@ -4,10 +4,7 @@ import { Link } from "@/elements/Link";
 import { Container } from "@/elements/Container";
 import { t } from "@/lib/i18n";
 
-/**
- * Common header (shared across all pages): logo left (clickable → home) +
- * purple "Login" button right (→ /login). Mobile-first: logo scales up on desktop.
- */
+// Common header: logo (→ home) + Login (→ /login).
 export function Header() {
   return (
     <header className="w-full bg-white py-3">

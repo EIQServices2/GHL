@@ -10,10 +10,7 @@ export interface LogoProps {
   priority?: boolean;
 }
 
-/**
- * Reusable logo (single source: /images/logo-powerrateindex.png).
- * Renders the <Image>; wraps in a Link when `href` is set.
- */
+// Reusable logo (single source: /images/logo-powerrateindex.png).
 export function Logo({
   alt = "Power Rate Index",
   className = "h-10 w-auto",

@@ -2,10 +2,7 @@ import { t } from "@/lib/i18n";
 import { Container } from "@/elements/Container";
 import { ContactForm } from "@/components/ContactForm";
 
-/**
- * Contact form section: heading + shared ContactForm.
- * Matches powerrateindex.org contact section.
- */
+// Contact form section: heading + shared ContactForm.
 export function HomeContact() {
   return (
     <section id="contact" className="w-full bg-pri-bg-light py-12">

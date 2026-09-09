@@ -8,11 +8,7 @@ export interface LinkProps
   href: string;
 }
 
-/**
- * Atomic link element. Internal hrefs ("/...") render via next/link (client
- * navigation); external hrefs ("http...") render a plain <a>. Consistent
- * focus/underline styling. Use for all navigation.
- */
+// Atomic link: internal → next/link, external → <a>.
 const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
   ({ className, href, ...props }, ref) => {
     const cls = cn(

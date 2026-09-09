@@ -6,10 +6,7 @@ export interface RateCardProps {
   variant?: "default" | "current";
 }
 
-/**
- * Reusable rate display card. `current` variant highlights with purple
- * border + purple text (GHL #624BFF). Numbers 44px fw700.
- */
+// Rate display card; `current` variant = purple border + text.
 export function RateCard({ label, value, variant = "default" }: RateCardProps) {
   const isCurrent = variant === "current";
   return (

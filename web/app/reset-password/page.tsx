@@ -6,10 +6,7 @@ import { Button } from "@/elements/Button";
 import { Container } from "@/elements/Container";
 import { Link } from "@/elements/Link";
 
-/**
- * Reset password page (ditto clone). UI only — form is not wired to Cognito
- * yet (auth endpoints captured in data/site.json).
- */
+// Reset password page (ditto clone). UI only — not wired to Cognito yet.
 export default function ResetPasswordPage() {
   const [username, setUsername] = useState("");
 

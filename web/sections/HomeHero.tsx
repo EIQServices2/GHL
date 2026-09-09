@@ -23,11 +23,7 @@ function Stat({ value, label }: { value: number; label: string }) {
   );
 }
 
-/**
- * Home hero: headline + 4 animated count-up stats + 2 CTAs.
- * Matches powerrateindex.org hero (CountUp animation).
- * Both CTAs smooth-scroll to the contact form (#contact).
- */
+// Home hero: headline + 4 animated count-up stats + 2 CTAs.
 export function HomeHero({ stats }: HomeHeroProps) {
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });

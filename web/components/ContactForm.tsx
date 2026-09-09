@@ -8,10 +8,7 @@ export interface ContactFormProps {
   onSubmitted?: () => void;
 }
 
-/**
- * Reusable contact/lead form: First/Last Name, Company, Email, Message.
- * Placeholder submit — wire endpoint later.
- */
+// Reusable contact/lead form: First/Last Name, Company, Email, Message.
 export function ContactForm({ onSubmitted }: ContactFormProps) {
   const [submitted, setSubmitted] = useState(false);
 

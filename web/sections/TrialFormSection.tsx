@@ -8,11 +8,7 @@ import { Container } from "@/elements/Container";
 import { Modal } from "@/elements/Modal";
 import { ContactForm } from "@/components/ContactForm";
 
-/**
- * CTA section: deep navy background (GHL #221A76), left-aligned text,
- * dashboard screenshot as <img> (80% width, centered), purple button.
- * Button opens a modal with the contact form (GHL openPopup behavior).
- */
+// CTA band: navy bg, button opens modal contact form.
 export function TrialFormSection() {
   const [open, setOpen] = useState(false);
 

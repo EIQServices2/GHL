@@ -1,10 +1,7 @@
 import { t } from "@/lib/i18n";
 import { Link } from "@/elements/Link";
 
-/**
- * Global 404 page (static export → 404.html). Rendered inside the root
- * layout, so header/footer/utility-links chrome is inherited.
- */
+// Global 404 page (static export → 404.html); inherits shared chrome.
 export default function NotFound() {
   return (
     <div className="flex flex-1 flex-col items-center justify-center bg-white px-4 py-24 text-center">

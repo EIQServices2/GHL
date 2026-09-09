@@ -6,11 +6,7 @@ export interface WhyItMattersSectionProps {
   valueProps: string[];
 }
 
-/**
- * "Why It Matters" section: purple heading (#624BFF) left, body (#313131)
- * right. Value props use a customizable Checkmark (blue #188bf6) instead of
- * emoji. Matches GHL row-ZML8NaNtru.
- */
+// "Why It Matters" section: purple heading (#624BFF) left, body (#313131)
 export function WhyItMattersSection({
   valueProps,
 }: WhyItMattersSectionProps) {

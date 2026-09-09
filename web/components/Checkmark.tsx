@@ -4,10 +4,7 @@ export interface CheckmarkProps {
   className?: string;
 }
 
-/**
- * Customizable checkmark (replaces ✅ emoji — emojis aren't style-controllable).
- * Uses the --pri-blue token color.
- */
+// Customizable checkmark (replaces ✅ emoji — emojis aren't style-controllable).
 export function Checkmark({ className }: CheckmarkProps) {
   return (
     <Check

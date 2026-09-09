@@ -7,11 +7,7 @@ export interface UtilityLinksSectionProps {
   utilities: Utility[];
 }
 
-/**
- * Utility links section (before footer): buttons linking to each utility's
- * rate-change inner page. Data-driven from utilities.json — adding a utility
- * auto-adds a button.
- */
+// Utility links (before footer): one button per utility, data-driven.
 export function UtilityLinksSection({ utilities }: UtilityLinksSectionProps) {
   return (
     <section className="w-full bg-pri-bg-light py-12">

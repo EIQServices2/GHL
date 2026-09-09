@@ -11,11 +11,7 @@ export interface HomePlatformProps {
   tduRates: TduRate[];
 }
 
-/**
- * Energy Pricing Intelligence Platform: interactive state selector + TDU bar chart.
- * Clicking a state chip switches the active state (GHL onClick → setState).
- * Chart title: "TDU based on 1000 kWh" for TX, "Utility" otherwise.
- */
+// Energy Pricing Intelligence Platform: interactive state selector + TDU bar chart.
 export function HomePlatform({ states, tduRates }: HomePlatformProps) {
   const [activeId, setActiveId] = useState(
     states.find((s) => s.active)?.id ?? states[0]?.id ?? "TX"

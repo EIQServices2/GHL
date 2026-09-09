@@ -38,10 +38,7 @@ const appData: AppData = {
   site: siteData as SiteConfig,
 };
 
-/**
- * Single data accessor — mimics the API response. All /data/ JSON is served
- * through this one function; consumers derive what they need from it.
- */
+// Single data accessor (mimics API); only reader of /data/ JSON.
 export function getData(): AppData {
   return appData;
 }

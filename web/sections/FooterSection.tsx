@@ -5,12 +5,7 @@ import { Link } from "@/elements/Link";
 import { Container } from "@/elements/Container";
 import { Logo } from "@/components/Logo";
 
-/**
- * Ditto footer from powerrateindex.org (#uni-ft). White bg, 4 columns:
- * Products / Support & Contact / Developers / Follow us on, plus logo,
- * AWS badge, eIQdigital logo + tagline, and copyright bar.
- * Links/URLs come from data/site.json (single data accessor).
- */
+// Ditto footer from powerrateindex.org (#uni-ft). White bg, 4 columns:
 export function FooterSection() {
   const { site } = getData();
   const { footer } = site;

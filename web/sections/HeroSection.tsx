@@ -6,12 +6,7 @@ export interface HeroSectionProps {
   rateChange: RateChange;
 }
 
-/**
- * Hero section: deep navy background + hero-wide background image (GHL
- * section-EjUrkJcvV6, bg 689a4bd76bdead336d0404ba.png). GHL uses
- * .bgCover100 = background-size:100% auto + no-repeat + top. Text left-aligned.
- * Heading is two-tone: white + lavender second line.
- */
+// Utility hero: navy bg + hero-wide image, two-tone heading.
 export function HeroSection({ rateChange }: HeroSectionProps) {
   return (
     <section className="relative w-full overflow-hidden bg-pri-navy py-[60px]">

@@ -9,10 +9,7 @@ export interface UseCountUpOptions {
   start?: number;
 }
 
-/**
- * Count-up animation (mirrors GHL CountUp v2.4.2: start 0, ease-out,
- * grouping separator, ~1s duration). Returns the formatted string.
- */
+// Count-up animation (mirrors GHL CountUp: ease-out, ~1s, comma separator).
 export function useCountUp({
   end,
   duration = 1,

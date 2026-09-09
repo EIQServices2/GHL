@@ -6,10 +6,7 @@ import { Button } from "@/elements/Button";
 import { Container } from "@/elements/Container";
 import { Link } from "@/elements/Link";
 
-/**
- * Login page (ditto clone of powerrateindex.org/login). UI only — form is
- * not wired to Cognito yet (auth endpoints captured in data/site.json).
- */
+// Login page (ditto clone). UI only — not wired to Cognito yet.
 export default function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

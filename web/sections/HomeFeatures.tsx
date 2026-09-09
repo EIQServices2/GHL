@@ -7,10 +7,7 @@ export interface HomeFeaturesProps {
   cards: FeatureCard[];
 }
 
-/**
- * Feature cards section: 4 cards with line-art icons.
- * Matches powerrateindex.org "critical tool" section.
- */
+// Feature cards section: 4 cards with line-art icons.
 export function HomeFeatures({ cards }: HomeFeaturesProps) {
   return (
     <section className="w-full bg-white py-12">

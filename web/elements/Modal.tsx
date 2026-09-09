@@ -11,10 +11,7 @@ export interface ModalProps {
   children: React.ReactNode;
 }
 
-/**
- * Reusable modal dialog. Backdrop click + Escape + X button close it.
- * Matches GHL popup (white body, centered, rounded).
- */
+// Reusable modal dialog. Backdrop click + Escape + X button close it.
 export function Modal({ open, onClose, title, children }: ModalProps) {
   React.useEffect(() => {
     if (!open) return;

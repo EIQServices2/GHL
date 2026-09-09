@@ -12,12 +12,7 @@ function formatRate(rate: number): string {
   return `${rate.toFixed(4)}¢/kWh`;
 }
 
-/**
- * Rate comparison section: previous (black) vs current (purple #624BFF)
- * with a trend arrow between. The arrow is dynamic — downward zigzag when
- * the rate decreased, upward (rotated 180°) when it increased. Matches the
- * GHL email funnel (image-Zv3dnij_iW trend indicator).
- */
+// Rate comparison section: previous (black) vs current (purple #624BFF)
 export function RateComparisonSection({
   rateChange,
 }: RateComparisonSectionProps) {

@@ -7,10 +7,7 @@ export interface ContainerProps {
   children: React.ReactNode;
 }
 
-/**
- * Shared content container — single source of truth for horizontal alignment.
- * wide (default) = 1440px, narrow = 3xl (funnel pages), form = 2xl (contact).
- */
+// Shared content container — single source of truth for horizontal alignment.
 export function Container({
   className,
   size = "wide",
