@@ -14,12 +14,15 @@ function formatRate(rate: number): string {
 
 /**
  * Rate comparison section: previous (black) vs current (purple #624BFF)
- * with arrow icon between. "Updated as of" is the right-side sub-heading.
- * Matches GHL row-D2Ul3br9l- (desktop).
+ * with a trend arrow between. The arrow is dynamic — downward zigzag when
+ * the rate decreased, upward (rotated 180°) when it increased. Matches the
+ * GHL email funnel (image-Zv3dnij_iW trend indicator).
  */
 export function RateComparisonSection({
   rateChange,
 }: RateComparisonSectionProps) {
+  const decreased = rateChange.currentRate < rateChange.previousRate;
+
   return (
     <section className="w-full py-12">
       <Container size="narrow">
@@ -30,10 +33,10 @@ export function RateComparisonSection({
           />
           <Image
             src="/images/icon-arrow-down.png"
-            alt=""
+            alt={decreased ? t("rateChange.decreased") : t("rateChange.increased")}
             width={527}
             height={527}
-            className="mx-auto h-8 w-8"
+            className={`mx-auto h-8 w-8 ${decreased ? "" : "rotate-180"}`}
           />
           <RateCard
             label={`${t("rateChange.updatedAsOf")} ${rateChange.updatedAsOf}`}

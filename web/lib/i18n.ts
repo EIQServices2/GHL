@@ -16,6 +16,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "rateChange.previousRate": "Previous Rate",
     "rateChange.currentRate": "Current",
     "rateChange.updatedAsOf": "Updated as of",
+    "rateChange.decreased": "Rate decreased",
+    "rateChange.increased": "Rate increased",
     "rateChange.whyItMatters": "Why It Matters",
     "rateChange.whyItMattersBody":
       "Fluctuations in TDU rates can directly impact your total electricity costs. PowerRateIndex keeps you informed — automatically.",
@@ -123,6 +125,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "rateChange.previousRate": "Tarifa anterior",
     "rateChange.currentRate": "Actual",
     "rateChange.updatedAsOf": "Actualizado a partir de",
+    "rateChange.decreased": "Tarifa disminuida",
+    "rateChange.increased": "Tarifa aumentada",
     "rateChange.whyItMatters": "Por qué es importante",
     "rateChange.whyItMattersBody":
       "Las fluctuaciones en las tarifas de TDU pueden afectar directamente sus costos totales de electricidad. PowerRateIndex lo mantiene informado, automáticamente.",
