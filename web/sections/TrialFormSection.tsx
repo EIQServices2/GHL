@@ -18,10 +18,10 @@ export function TrialFormSection() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-[3fr_2fr] md:items-center">
           <div className="text-left">
             <h2 className="text-sm font-normal uppercase leading-[2] tracking-[2px] text-pri-lavender">
-              {t("rateChange.experienceFree")}
+              {t("TrialForm.ExperienceFree")}
             </h2>
             <h3 className="mt-2 text-3xl font-bold leading-[1.2] tracking-[-1px] text-white md:text-5xl">
-              {t("rateChange.startMonitoring")}
+              {t("TrialForm.StartMonitoring")}
             </h3>
           </div>
           <div className="flex justify-center md:justify-end">
@@ -30,7 +30,7 @@ export function TrialFormSection() {
               onClick={() => setOpen(true)}
               className="rounded-full bg-pri-purple px-5 py-4 text-sm font-bold uppercase tracking-[2px] text-white hover:bg-pri-purple/90 whitespace-normal text-center leading-snug sm:whitespace-nowrap"
             >
-              {t("rateChange.cta")}
+              {t("TrialForm.CTA")}
             </Button>
           </div>
         </div>

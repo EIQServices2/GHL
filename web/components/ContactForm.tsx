@@ -16,10 +16,10 @@ export function ContactForm({ onSubmitted }: ContactFormProps) {
     return (
       <div className="text-center">
         <p className="text-lg font-semibold text-pri-ink">
-          {t("home.formSuccess")}
+          {t("HomeContact.FormSuccess")}
         </p>
         <p className="mt-2 text-[15px] text-pri-ink-muted">
-          {t("home.formSuccessBody")}
+          {t("HomeContact.FormSuccessBody")}
         </p>
       </div>
     );
@@ -37,7 +37,7 @@ export function ContactForm({ onSubmitted }: ContactFormProps) {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="contact-first-name" className="mb-1 block text-sm text-pri-ink-muted">
-            {t("home.formFirstName")}
+            {t("HomeContact.FormFirstName")}
           </label>
           <input
             id="contact-first-name"
@@ -48,7 +48,7 @@ export function ContactForm({ onSubmitted }: ContactFormProps) {
         </div>
         <div>
           <label htmlFor="contact-last-name" className="mb-1 block text-sm text-pri-ink-muted">
-            {t("home.formLastName")}
+            {t("HomeContact.FormLastName")}
           </label>
           <input
             id="contact-last-name"
@@ -60,7 +60,7 @@ export function ContactForm({ onSubmitted }: ContactFormProps) {
       </div>
       <div className="mt-4">
         <label htmlFor="contact-company" className="mb-1 block text-sm text-pri-ink-muted">
-          {t("home.formCompany")}
+          {t("HomeContact.FormCompany")}
         </label>
         <input
           id="contact-company"
@@ -70,7 +70,7 @@ export function ContactForm({ onSubmitted }: ContactFormProps) {
       </div>
       <div className="mt-4">
         <label htmlFor="contact-email" className="mb-1 block text-sm text-pri-ink-muted">
-          {t("home.formEmail")}
+          {t("HomeContact.FormEmail")}
         </label>
         <input
           id="contact-email"
@@ -81,7 +81,7 @@ export function ContactForm({ onSubmitted }: ContactFormProps) {
       </div>
       <div className="mt-4">
         <label htmlFor="contact-message" className="mb-1 block text-sm text-pri-ink-muted">
-          {t("home.formMessage")}
+          {t("HomeContact.FormMessage")}
         </label>
         <textarea
           id="contact-message"
@@ -93,7 +93,7 @@ export function ContactForm({ onSubmitted }: ContactFormProps) {
         type="submit"
         className="mt-6 w-full rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white hover:bg-pri-purple/90 sm:w-auto"
       >
-        {t("home.formSubmit")}
+        {t("HomeContact.FormSubmit")}
       </Button>
     </form>
   );

@@ -23,10 +23,10 @@ export async function generateMetadata({
   const name = rc.utility.name;
   const o = rc.overrides;
   return {
-    title: o?.seoTitle ?? t("meta.utilityTitle", "en", { name }),
+    title: o?.seoTitle ?? t("Meta.UtilityTitle", "en", { name }),
     description:
       o?.seoDescription ??
-      t("meta.utilityDescription", "en", {
+      t("Meta.UtilityDescription", "en", {
         name,
         previous: rc.previousRate,
         current: rc.currentRate,

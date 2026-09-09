@@ -16,12 +16,12 @@ export function HomeScrape() {
         />
         <div>
           <h2 className="text-2xl font-bold leading-snug text-pri-ink md:text-3xl">
-            {t("home.scrapeTitle")}
+            {t("HomeScrape.Title")}
           </h2>
           <ul className="mt-6 space-y-3 text-[15px] text-pri-ink-muted">
-            <li>• {t("home.scrapeBullet1")}</li>
-            <li>• {t("home.scrapeBullet2")}</li>
-            <li>• {t("home.scrapeBullet3")}</li>
+            <li>• {t("HomeScrape.Bullet1")}</li>
+            <li>• {t("HomeScrape.Bullet2")}</li>
+            <li>• {t("HomeScrape.Bullet3")}</li>
           </ul>
         </div>
       </Container>

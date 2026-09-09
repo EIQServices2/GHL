@@ -23,10 +23,10 @@ export function HomePlatform({ states, tduRates }: HomePlatformProps) {
     <section className="w-full bg-pri-bg-grey py-12">
       <Container>
         <h2 className="text-center text-2xl font-bold text-pri-ink md:text-3xl">
-          {t("home.platformTitle")}
+          {t("HomePlatform.Title")}
         </h2>
         <p className="mx-auto mt-3 max-w-3xl text-center text-[15px] text-pri-ink-muted">
-          {t("home.platformSubtitle")}
+          {t("HomePlatform.Subtitle")}
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_2fr]">
@@ -53,7 +53,7 @@ export function HomePlatform({ states, tduRates }: HomePlatformProps) {
           {/* Bar chart */}
           <div>
             <h3 className="mb-4 text-lg font-semibold text-pri-ink">
-              {isTx ? t("home.avgRateByTdu") : t("home.avgRateByUtility")}
+              {isTx ? t("HomePlatform.AvgRateByTdu") : t("HomePlatform.AvgRateByUtility")}
             </h3>
             <div className="space-y-3">
               {tduRates.map((r) => (

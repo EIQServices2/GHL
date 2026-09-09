@@ -13,7 +13,7 @@ export function HomeFeatures({ cards }: HomeFeaturesProps) {
     <section className="w-full bg-white py-12">
       <Container>
         <h2 className="mx-auto max-w-3xl text-center text-2xl font-bold text-pri-ink md:text-3xl">
-          {t("home.featuresTitle")}
+          {t("HomeFeatures.Title")}
         </h2>
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c) => (

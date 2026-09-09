@@ -67,19 +67,19 @@
   "featureCards": [
     {
       "icon": "feature_analytics.png",
-      "textKey": "home.featureCard1"
+      "textKey": "HomeFeatures.Card1"
     },
     {
       "icon": "feature_data_research.png",
-      "textKey": "home.featureCard2"
+      "textKey": "HomeFeatures.Card2"
     },
     {
       "icon": "feature_consulting.png",
-      "textKey": "home.featureCard3"
+      "textKey": "HomeFeatures.Card3"
     },
     {
       "icon": "feature_risk_analytics.png",
-      "textKey": "home.featureCard4"
+      "textKey": "HomeFeatures.Card4"
     }
   ]
 }

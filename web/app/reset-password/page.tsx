@@ -15,10 +15,10 @@ export default function ResetPasswordPage() {
       <Container size="form">
         <div className="mx-auto max-w-md rounded-lg bg-white p-6 shadow-sm md:p-8">
           <h1 className="text-center text-2xl font-bold text-pri-ink">
-            {t("auth.resetTitle")}
+            {t("Auth.ResetTitle")}
           </h1>
           <p className="mt-2 text-center text-[15px] text-pri-ink-muted">
-            {t("auth.resetSubtitle")}
+            {t("Auth.ResetSubtitle")}
           </p>
 
           <form
@@ -30,7 +30,7 @@ export default function ResetPasswordPage() {
                 htmlFor="reset-username"
                 className="mb-1 block text-sm text-pri-ink-muted"
               >
-                {t("auth.username")}
+                {t("Auth.Username")}
               </label>
               <input
                 id="reset-username"
@@ -46,7 +46,7 @@ export default function ResetPasswordPage() {
               type="submit"
               className="mt-6 w-full rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white hover:bg-pri-purple/90"
             >
-              {t("auth.sendCode")}
+              {t("Auth.SendCode")}
             </Button>
           </form>
 
@@ -55,7 +55,7 @@ export default function ResetPasswordPage() {
               href="/login"
               className="text-sm text-pri-purple hover:underline"
             >
-              {t("auth.backToSignIn")}
+              {t("Auth.BackToSignIn")}
             </Link>
           </div>
         </div>

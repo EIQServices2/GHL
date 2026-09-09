@@ -23,18 +23,18 @@ export function RateComparisonSection({
       <Container size="narrow">
         <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-[1fr_auto_1fr]">
           <RateCard
-            label={t("rateChange.previousRate")}
+            label={t("RateComparison.PreviousRate")}
             value={formatRate(rateChange.previousRate)}
           />
           <Image
             src="/images/icon-arrow-down.png"
-            alt={decreased ? t("rateChange.decreased") : t("rateChange.increased")}
+            alt={decreased ? t("RateComparison.Decreased") : t("RateComparison.Increased")}
             width={527}
             height={527}
             className={`mx-auto h-8 w-8 ${decreased ? "" : "rotate-180"}`}
           />
           <RateCard
-            label={`${t("rateChange.updatedAsOf")} ${rateChange.updatedAsOf}`}
+            label={`${t("RateComparison.UpdatedAsOf")} ${rateChange.updatedAsOf}`}
             value={formatRate(rateChange.currentRate)}
             variant="current"
           />

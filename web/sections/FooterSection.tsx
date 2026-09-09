@@ -40,10 +40,10 @@ export function FooterSection() {
               />
             </Link>
             <p className="mt-3 text-[15px] text-pri-ink-muted">
-              {t("footer.tagline1")}
+              {t("Footer.Tagline1")}
             </p>
             <p className="mt-1.5 text-[13px] italic leading-[1.1] text-pri-ink-faint">
-              {t("footer.tagline2")}
+              {t("Footer.Tagline2")}
             </p>
           </div>
         </div>
@@ -52,7 +52,7 @@ export function FooterSection() {
         <div className="flex flex-col gap-8 md:flex-row md:justify-end md:gap-[88px]">
           <div>
             <h5 className="mb-3 text-[18px] font-semibold md:text-[20px]">
-              {t("footer.products")}
+              {t("Footer.Products")}
             </h5>
             <ul className="flex flex-wrap gap-x-5 gap-y-2 md:block">
               {footer.products.map((p) => (
@@ -71,7 +71,7 @@ export function FooterSection() {
           </div>
           <div>
             <h5 className="mb-3 text-[18px] font-semibold md:text-[20px]">
-              {t("footer.support")}
+              {t("Footer.Support")}
             </h5>
             <ul className="flex flex-wrap gap-x-5 gap-y-2 md:block">
               <li className="md:my-2">
@@ -81,14 +81,14 @@ export function FooterSection() {
                   rel="noopener"
                   className="text-[15px] text-pri-ink-muted no-underline"
                 >
-                  {t("footer.contactUs")}
+                  {t("Footer.ContactUs")}
                 </Link>
               </li>
             </ul>
           </div>
           <div>
             <h5 className="mb-3 text-[18px] font-semibold md:text-[20px]">
-              {t("footer.developers")}
+              {t("Footer.Developers")}
             </h5>
             <ul className="flex flex-wrap gap-x-5 gap-y-2 md:block">
               <li className="md:my-2">
@@ -98,14 +98,14 @@ export function FooterSection() {
                   rel="noopener"
                   className="text-[15px] text-pri-ink-muted no-underline"
                 >
-                  {t("footer.documentation")}
+                  {t("Footer.Documentation")}
                 </Link>
               </li>
             </ul>
           </div>
           <div>
             <h5 className="mb-3 text-[18px] font-semibold md:text-[20px]">
-              {t("footer.followUs")}
+              {t("Footer.FollowUs")}
             </h5>
             <ul className="flex gap-5">
               {footer.social.map((s) => (
@@ -156,7 +156,7 @@ export function FooterSection() {
       </Container>
 
       <div className="mt-8 text-center text-[14px] text-pri-ink">
-        {t("footer.rights")}
+        {t("Footer.Rights")}
       </div>
     </footer>
   );

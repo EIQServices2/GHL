@@ -23,10 +23,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: t("meta.title"),
-    template: t("meta.titleTemplate"),
+    default: t("Meta.Title"),
+    template: t("Meta.TitleTemplate"),
   },
-  description: t("meta.description"),
+  description: t("Meta.Description"),
   keywords: [
     "retail energy",
     "electricity pricing",
@@ -42,14 +42,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: SITE_URL,
-    siteName: t("meta.siteName"),
-    title: t("meta.title"),
-    description: t("meta.ogDescription"),
+    siteName: t("Meta.SiteName"),
+    title: t("Meta.Title"),
+    description: t("Meta.OgDescription"),
   },
   twitter: {
     card: "summary_large_image",
-    title: t("meta.title"),
-    description: t("meta.ogDescription"),
+    title: t("Meta.Title"),
+    description: t("Meta.OgDescription"),
   },
   robots: {
     index: true,

@@ -16,7 +16,7 @@ export default function LoginPage() {
       <Container size="form">
         <div className="mx-auto max-w-md rounded-lg bg-white p-6 shadow-sm md:p-8">
           <h1 className="text-center text-2xl font-bold text-pri-ink">
-            {t("auth.signIn")}
+            {t("Auth.SignIn")}
           </h1>
 
           <form
@@ -28,7 +28,7 @@ export default function LoginPage() {
                 htmlFor="login-username"
                 className="mb-1 block text-sm text-pri-ink-muted"
               >
-                {t("auth.username")}
+                {t("Auth.Username")}
               </label>
               <input
                 id="login-username"
@@ -44,7 +44,7 @@ export default function LoginPage() {
                 htmlFor="login-password"
                 className="mb-1 block text-sm text-pri-ink-muted"
               >
-                {t("auth.password")}
+                {t("Auth.Password")}
               </label>
               <input
                 id="login-password"
@@ -61,7 +61,7 @@ export default function LoginPage() {
                 href="/reset-password"
                 className="text-sm text-pri-purple hover:underline"
               >
-                {t("auth.forgotPassword")}
+                {t("Auth.ForgotPassword")}
               </Link>
             </div>
 
@@ -69,7 +69,7 @@ export default function LoginPage() {
               type="submit"
               className="mt-6 w-full rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white hover:bg-pri-purple/90"
             >
-              {t("auth.signIn")}
+              {t("Auth.SignIn")}
             </Button>
           </form>
         </div>

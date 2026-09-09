@@ -8,8 +8,8 @@ import { HomePlatform } from "@/sections/HomePlatform";
 import { HomeContact } from "@/sections/HomeContact";
 
 export const metadata: Metadata = {
-  title: t("meta.title"),
-  description: t("meta.description"),
+  title: t("Meta.Title"),
+  description: t("Meta.Description"),
 };
 
 export default function HomePage() {

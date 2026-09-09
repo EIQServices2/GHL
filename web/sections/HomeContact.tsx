@@ -8,10 +8,10 @@ export function HomeContact() {
     <section id="contact" className="w-full bg-pri-bg-light py-12">
       <Container size="form" className="text-center">
         <h2 className="text-2xl font-bold text-pri-ink md:text-3xl">
-          {t("home.contactTitle")}
+          {t("HomeContact.Title")}
         </h2>
         <p className="mt-3 text-[15px] text-pri-ink-muted">
-          {t("home.contactSubtitle")}
+          {t("HomeContact.Subtitle")}
         </p>
 
         <div className="mt-8 rounded-lg bg-white p-6 shadow-sm md:p-8">

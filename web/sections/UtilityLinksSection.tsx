@@ -13,7 +13,7 @@ export function UtilityLinksSection({ utilities }: UtilityLinksSectionProps) {
     <section className="w-full bg-pri-bg-light py-12">
       <Container className="text-center">
         <h2 className="text-2xl font-bold text-pri-ink md:text-3xl">
-          {t("home.utilityLinksTitle")}
+          {t("UtilityLinks.Title")}
         </h2>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           {utilities.map((u) => (
