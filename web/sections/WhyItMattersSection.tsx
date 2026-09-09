@@ -4,11 +4,13 @@ import { Checkmark } from "@/components/Checkmark";
 
 export interface WhyItMattersSectionProps {
   valueProps: string[];
+  body?: string;
 }
 
 // "Why It Matters" section: purple heading (#624BFF) left, body (#313131)
 export function WhyItMattersSection({
   valueProps,
+  body,
 }: WhyItMattersSectionProps) {
   return (
     <section className="w-full py-12">
@@ -17,7 +19,7 @@ export function WhyItMattersSection({
           {t("rateChange.whyItMatters")}
         </h2>
         <div className="text-base leading-[1.4] text-pri-dark md:text-[18px] md:leading-[1.3]">
-          <p>{t("rateChange.whyItMattersBody")}</p>
+          <p>{body ?? t("rateChange.whyItMattersBody")}</p>
           {valueProps.map((key) => (
             <p key={key} className="mt-2 flex items-start gap-2">
               <Checkmark className="mt-1 h-5 w-5 shrink-0 text-pri-blue" />

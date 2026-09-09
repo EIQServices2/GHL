@@ -6,17 +6,17 @@ import type { SiteConfig } from "@/types/site";
 import homeData from "@/data/home.json";
 import siteData from "@/data/site.json";
 
-// Auto-load all rate-change JSON files (dynamic — no manual import map).
-// Adding a new utility = drop one JSON file in data/rate-changes/.
-const RATE_CHANGES_DIR = path.join(process.cwd(), "data", "rate-changes");
+// Auto-load all utility JSON files (dynamic — no manual import map).
+// Adding a new utility = drop one JSON file in data/utilities/.
+const UTILITIES_DIR = path.join(process.cwd(), "data", "utilities");
 
 function loadRateChanges(): RateChange[] {
   return fs
-    .readdirSync(RATE_CHANGES_DIR)
+    .readdirSync(UTILITIES_DIR)
     .filter((f) => f.endsWith(".json"))
     .map((f) =>
       JSON.parse(
-        fs.readFileSync(path.join(RATE_CHANGES_DIR, f), "utf-8")
+        fs.readFileSync(path.join(UTILITIES_DIR, f), "utf-8")
       ) as RateChange
     );
 }

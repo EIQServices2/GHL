@@ -21,13 +21,16 @@ export async function generateMetadata({
   if (!rc) return {};
 
   const name = rc.utility.name;
+  const o = rc.overrides;
   return {
-    title: t("meta.utilityTitle", "en", { name }),
-    description: t("meta.utilityDescription", "en", {
-      name,
-      previous: rc.previousRate,
-      current: rc.currentRate,
-    }),
+    title: o?.seoTitle ?? t("meta.utilityTitle", "en", { name }),
+    description:
+      o?.seoDescription ??
+      t("meta.utilityDescription", "en", {
+        name,
+        previous: rc.previousRate,
+        current: rc.currentRate,
+      }),
     alternates: { canonical: `/${utility}` },
   };
 }
@@ -50,7 +53,10 @@ export default async function UtilityPage({
     <>
       <HeroSection rateChange={rateChange} />
       <RateComparisonSection rateChange={rateChange} />
-      <WhyItMattersSection valueProps={rateChange.valueProps} />
+      <WhyItMattersSection
+        valueProps={rateChange.valueProps}
+        body={rateChange.overrides?.whyItMattersBody}
+      />
       <TrialFormSection />
     </>
   );

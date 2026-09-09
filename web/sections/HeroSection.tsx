@@ -8,6 +8,10 @@ export interface HeroSectionProps {
 
 // Utility hero: navy bg + hero-wide image, two-tone heading.
 export function HeroSection({ rateChange }: HeroSectionProps) {
+  const o = rateChange.overrides;
+  const title = o?.heroTitle ?? `${rateChange.utility.name} ${t("rateChange.title")}.`;
+  const subtitle = o?.heroSubtitle ?? t("rateChange.subtitle");
+
   return (
     <section className="relative w-full overflow-hidden bg-pri-navy py-[60px]">
       <div
@@ -19,11 +23,11 @@ export function HeroSection({ rateChange }: HeroSectionProps) {
       />
       <Container size="narrow" className="relative text-left">
         <h1 className="text-3xl font-normal leading-[1.1] tracking-[-1px] text-white md:text-5xl">
-          {rateChange.utility.name} {t("rateChange.title")}.{" "}
+          {title}{" "}
           <span className="text-pri-lavender">{t("rateChange.seeHow")}</span>
         </h1>
         <p className="mt-4 max-w-xl text-lg leading-[1.5] text-white">
-          {t("rateChange.subtitle")}
+          {subtitle}
         </p>
       </Container>
     </section>
