@@ -13,14 +13,14 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const { home } = getData();
+  const { home, tduRates } = getData();
 
   return (
     <>
       <HomeHero stats={home.stats} />
       <HomeScrape />
       <HomeFeatures cards={home.featureCards} />
-      <HomePlatform states={home.states} tduRates={home.tduRates} />
+      <HomePlatform states={home.states} tduRates={tduRates} />
       <HomeContact />
     </>
   );

@@ -50,13 +50,7 @@ export default async function UtilityPage({
     <>
       <HeroSection rateChange={rateChange} />
       <RateComparisonSection rateChange={rateChange} />
-      <WhyItMattersSection
-        valueProps={[
-          "rateChange.valueProp1",
-          "rateChange.valueProp2",
-          "rateChange.valueProp3",
-        ]}
-      />
+      <WhyItMattersSection valueProps={rateChange.valueProps} />
       <TrialFormSection />
     </>
   );

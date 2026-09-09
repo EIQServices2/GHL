@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { RateChange, Utility } from "@/types";
-import type { HomePageData } from "@/types/home";
+import type { HomePageData, TduRate } from "@/types/home";
 import type { SiteConfig } from "@/types/site";
 import homeData from "@/data/home.json";
 import siteData from "@/data/site.json";
@@ -23,10 +23,15 @@ function loadRateChanges(): RateChange[] {
 
 const rateChanges: RateChange[] = loadRateChanges();
 const utilities: Utility[] = rateChanges.map((rc) => rc.utility);
+const tduRates: TduRate[] = rateChanges.map((rc) => ({
+  name: rc.utility.name,
+  rate: rc.avgRate,
+}));
 
 export interface AppData {
   utilities: Utility[];
   rateChanges: RateChange[];
+  tduRates: TduRate[];
   home: HomePageData;
   site: SiteConfig;
 }
@@ -34,6 +39,7 @@ export interface AppData {
 const appData: AppData = {
   utilities,
   rateChanges,
+  tduRates,
   home: { ...(homeData as Omit<HomePageData, "utilities">), utilities },
   site: siteData as SiteConfig,
 };

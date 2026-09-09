@@ -5,5 +5,6 @@ export interface RateChange {
   previousRate: number; // ¢/kWh
   currentRate: number; // ¢/kWh
   updatedAsOf: string; // ISO date (YYYY-MM-DD)
-  currency: string; // "USD"
+  avgRate: number; // ¢/kWh — today's avg rate (bar chart)
+  valueProps: string[]; // i18n keys for "Why It Matters" bullets
 }

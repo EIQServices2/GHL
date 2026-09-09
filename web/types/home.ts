@@ -26,7 +26,6 @@ export interface FeatureCard {
 export interface HomePageData {
   stats: HomeStats;
   states: StateOption[];
-  tduRates: TduRate[];
   featureCards: FeatureCard[];
   utilities: Utility[];
 }

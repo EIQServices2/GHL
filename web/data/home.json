@@ -6,33 +6,80 @@
     "totalPlans": 9358
   },
   "states": [
-    { "id": "TX", "name": "Texas", "active": true },
-    { "id": "CT", "name": "Connecticut" },
-    { "id": "DC", "name": "District of Columbia" },
-    { "id": "DE", "name": "Delaware" },
-    { "id": "IL", "name": "Illinois" },
-    { "id": "MA", "name": "Massachusetts" },
-    { "id": "MD", "name": "Maryland" },
-    { "id": "ME", "name": "Maine" },
-    { "id": "NH", "name": "New Hampshire" },
-    { "id": "NJ", "name": "New Jersey" },
-    { "id": "NY", "name": "New York" },
-    { "id": "OH", "name": "Ohio" },
-    { "id": "PA", "name": "Pennsylvania" },
-    { "id": "RI", "name": "Rhode Island" }
-  ],
-  "tduRates": [
-    { "name": "AEP Central", "rate": 14.17 },
-    { "name": "AEP North", "rate": 14.79 },
-    { "name": "CenterPoint Energy", "rate": 14.61 },
-    { "name": "Lubbock Power & Light", "rate": 14.75 },
-    { "name": "Oncor Electric Delivery", "rate": 14.28 },
-    { "name": "Texas New Mexico Power (TNMP)", "rate": 16.05 }
+    {
+      "id": "TX",
+      "name": "Texas",
+      "active": true
+    },
+    {
+      "id": "CT",
+      "name": "Connecticut"
+    },
+    {
+      "id": "DC",
+      "name": "District of Columbia"
+    },
+    {
+      "id": "DE",
+      "name": "Delaware"
+    },
+    {
+      "id": "IL",
+      "name": "Illinois"
+    },
+    {
+      "id": "MA",
+      "name": "Massachusetts"
+    },
+    {
+      "id": "MD",
+      "name": "Maryland"
+    },
+    {
+      "id": "ME",
+      "name": "Maine"
+    },
+    {
+      "id": "NH",
+      "name": "New Hampshire"
+    },
+    {
+      "id": "NJ",
+      "name": "New Jersey"
+    },
+    {
+      "id": "NY",
+      "name": "New York"
+    },
+    {
+      "id": "OH",
+      "name": "Ohio"
+    },
+    {
+      "id": "PA",
+      "name": "Pennsylvania"
+    },
+    {
+      "id": "RI",
+      "name": "Rhode Island"
+    }
   ],
   "featureCards": [
-    { "icon": "feature_analytics.png", "textKey": "home.featureCard1" },
-    { "icon": "feature_data_research.png", "textKey": "home.featureCard2" },
-    { "icon": "feature_consulting.png", "textKey": "home.featureCard3" },
-    { "icon": "feature_risk_analytics.png", "textKey": "home.featureCard4" }
+    {
+      "icon": "feature_analytics.png",
+      "textKey": "home.featureCard1"
+    },
+    {
+      "icon": "feature_data_research.png",
+      "textKey": "home.featureCard2"
+    },
+    {
+      "icon": "feature_consulting.png",
+      "textKey": "home.featureCard3"
+    },
+    {
+      "icon": "feature_risk_analytics.png",
+      "textKey": "home.featureCard4"
+    }
   ]
 }

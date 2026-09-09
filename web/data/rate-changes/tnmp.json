@@ -1,7 +1,16 @@
 {
-  "utility": { "slug": "tnmp", "name": "Texas New Mexico Power", "code": "TNMP" },
-  "previousRate": 4.7890,
+  "utility": {
+    "slug": "tnmp",
+    "name": "Texas New Mexico Power",
+    "code": "TNMP"
+  },
+  "previousRate": 4.789,
   "currentRate": 4.7654,
   "updatedAsOf": "2026-09-01",
-  "currency": "USD"
+  "valueProps": [
+    "rateChange.valueProp1",
+    "rateChange.valueProp2",
+    "rateChange.valueProp3"
+  ],
+  "avgRate": 16.05
 }
