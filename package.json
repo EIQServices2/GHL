@@ -1,0 +1,11 @@
+{
+  "name": "EIQ PowerRateIndex GHL",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PowerRateIndex Public Facing Pages",
+  "scripts": {
+    "dev": "npm run dev --prefix web",
+    "build": "npm run build --prefix web",
+    "lint": "npm run lint --prefix web"
+  }
+}

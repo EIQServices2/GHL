@@ -1,0 +1,16 @@
+{
+  "utility": {
+    "slug": "lubbock",
+    "name": "Lubbock Power & Light",
+    "code": "LPNL"
+  },
+  "previousRate": 3.9876,
+  "currentRate": 3.9654,
+  "updatedAsOf": "2026-09-01",
+  "valueProps": [
+    "WhyItMatter.ValueProp1",
+    "WhyItMatter.ValueProp2",
+    "WhyItMatter.ValueProp3"
+  ],
+  "avgRate": 14.75
+}

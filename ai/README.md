@@ -1,0 +1,61 @@
+# GHL — Knowledge Index
+
+> Entry point for understanding the GHL decommission project. Read this first.
+
+## What is this project?
+
+Decommission GoHighLevel (GHL) and migrate its TDU rate-change notification pages to our own infra. The pages are rebuilt as a NextJS frontend (pure clone, better tech) hosted on `powerrateindex.org` (Amplify + CloudFront).
+
+## Knowledge hierarchy
+
+```
+ARCHITECTURE → REFERENCE → PROJECT STATE → IMPLEMENTATION
+```
+
+## Monorepo layout
+
+```
+GHL/
+├── web/          # NextJS frontend (static export → Amplify + CloudFront)
+├── gateway/      # backend (TBD — user will create)
+├── ai/           # this folder — context for new sessions
+└── package.json  # root scripts
+```
+
+## Canonical documents
+
+| Subject | Document |
+|---|---|
+| Architecture | `ai/architecture/architecture.md` |
+| Deployment plan | `ai/architecture/deployment-plan.md` |
+| Design tokens | `DESIGN.md` (repo root) |
+
+**One source of truth per subject.** If a fact appears twice, the canonical doc wins.
+
+> Ditto-clone reference material (GHL source HTML, spec, test images, screenshots) is archived in the ticket data folder `~/Dev-Work-Local/D0045--EIQ-GHL/EIQ-GHL1/` (datetime-stamped), not in this repo.
+
+## Project state
+
+Current work, blockers, pending decisions live in `~/Project_State/D0045/` (not this repo). See `h5.notes.md`, `project.md`, `rules.md`.
+
+## Key conventions (user-mandated)
+
+- **Types** in `web/types/` — one file per domain, plain interfaces, barrel `index.ts`.
+- **i18n** via `web/lib/i18n.ts` — `locales` const + `translations: Record<Locale, Record<string,string>>`, `en` + `es` locales, `{var}` interpolation. Keys are uniform `Section.Key` (PascalCase, e.g. `WhyItMatter.Title`). Never hardcode English.
+- **Non-translatable config** in `web/data/site.json` (URLs, brand names, footer products, auth endpoints).
+- **Single data accessor** — `getData()` in `web/lib/data.ts` is the ONLY way to read `/data/*.json` (mimics a server API). No scattered imports.
+- **Utility data** — one JSON per utility in `web/data/utilities/{slug}.json` (identity + rates + avgRate + valueProps + optional overrides). Adding a utility = drop one JSON, no code change.
+- **Static export** (`output: 'export'`) → Amplify + CloudFront.
+- **Extensible** — one `[utility]/page.tsx` driven by `generateStaticParams` + `fs.readdirSync` (dynamic slugs), not N hardcoded pages.
+- **4-layer architecture** — page → sections → components → elements (see `architecture.md`).
+- **Shared chrome** — Header + UtilityLinksSection + FooterSection render once in `layout.tsx` (identical on every page).
+- **Elements enforced** — all buttons via `elements/Button`, all nav via `elements/Link`, all logos via `components/Logo`, all alignment via `elements/Container`.
+- **Single logo** — `logo-powerrateindex.png` only (`logo-dark.png` removed).
+- **Mobile-first** — base styles = mobile, `md:`/`lg:` = desktop escalation.
+
+## Branches
+
+| Branch | Purpose |
+|---|---|
+| `dev` | Integration branch |
+| `prod` | Production (later) |

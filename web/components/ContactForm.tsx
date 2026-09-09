@@ -1,0 +1,100 @@
+"use client";
+
+import { useState } from "react";
+import { t } from "@/lib/i18n";
+import { Button } from "@/elements/Button";
+
+export interface ContactFormProps {
+  onSubmitted?: () => void;
+}
+
+// Reusable contact/lead form: First/Last Name, Company, Email, Message.
+export function ContactForm({ onSubmitted }: ContactFormProps) {
+  const [submitted, setSubmitted] = useState(false);
+
+  if (submitted) {
+    return (
+      <div className="text-center">
+        <p className="text-lg font-semibold text-pri-ink">
+          {t("HomeContact.FormSuccess")}
+        </p>
+        <p className="mt-2 text-[15px] text-pri-ink-muted">
+          {t("HomeContact.FormSuccessBody")}
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <form
+      className="text-left"
+      onSubmit={(e) => {
+        e.preventDefault();
+        setSubmitted(true);
+        onSubmitted?.();
+      }}
+    >
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div>
+          <label htmlFor="contact-first-name" className="mb-1 block text-sm text-pri-ink-muted">
+            {t("HomeContact.FormFirstName")}
+          </label>
+          <input
+            id="contact-first-name"
+            type="text"
+            required
+            className="w-full rounded border border-pri-border px-3 py-2 text-sm"
+          />
+        </div>
+        <div>
+          <label htmlFor="contact-last-name" className="mb-1 block text-sm text-pri-ink-muted">
+            {t("HomeContact.FormLastName")}
+          </label>
+          <input
+            id="contact-last-name"
+            type="text"
+            required
+            className="w-full rounded border border-pri-border px-3 py-2 text-sm"
+          />
+        </div>
+      </div>
+      <div className="mt-4">
+        <label htmlFor="contact-company" className="mb-1 block text-sm text-pri-ink-muted">
+          {t("HomeContact.FormCompany")}
+        </label>
+        <input
+          id="contact-company"
+          type="text"
+          className="w-full rounded border border-pri-border px-3 py-2 text-sm"
+        />
+      </div>
+      <div className="mt-4">
+        <label htmlFor="contact-email" className="mb-1 block text-sm text-pri-ink-muted">
+          {t("HomeContact.FormEmail")}
+        </label>
+        <input
+          id="contact-email"
+          type="email"
+          required
+          className="w-full rounded border border-pri-border px-3 py-2 text-sm"
+        />
+      </div>
+      <div className="mt-4">
+        <label htmlFor="contact-message" className="mb-1 block text-sm text-pri-ink-muted">
+          {t("HomeContact.FormMessage")}
+        </label>
+        <textarea
+          id="contact-message"
+          rows={4}
+          className="w-full rounded border border-pri-border px-3 py-2 text-sm"
+        />
+      </div>
+      <Button
+        type="submit"
+        className="mt-6 w-full rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white hover:bg-pri-purple/90 sm:w-auto"
+      >
+        {t("HomeContact.FormSubmit")}
+      </Button>
+    </form>
+  );
+}
