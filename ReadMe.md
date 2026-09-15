@@ -24,4 +24,5 @@ npm run build    # build web/ → web/out/
 
 - `ai/README.md` — knowledge index (read first)
 - `ai/CONTEXT.md` — quick orientation for new sessions
+- `ai/DESIGN.md` — design tokens (colors, typography)
 - `~/Project_State/D0045/` — project state (h5.notes.md, project.md, rules.md)

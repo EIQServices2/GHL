@@ -28,7 +28,7 @@ GHL/
 |---|---|
 | Architecture | `ai/architecture/architecture.md` |
 | Deployment plan | `ai/architecture/deployment-plan.md` |
-| Design tokens | `DESIGN.md` (repo root) |
+| Design tokens | `ai/DESIGN.md` |
 
 **One source of truth per subject.** If a fact appears twice, the canonical doc wins.
 

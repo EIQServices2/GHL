@@ -32,7 +32,7 @@ export function FooterSection() {
             <Link href={footer.eiqdigital.href} target="_blank" rel="noopener">
               <Image
                 src="/images/eiqdigital-logo.png"
-                alt="eIQdigital"
+                alt="EIQdigital"
                 width={160}
                 height={40}
                 className="h-[40px] w-auto"
