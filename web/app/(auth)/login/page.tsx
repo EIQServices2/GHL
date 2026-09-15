@@ -3,19 +3,55 @@
 import { useState } from "react";
 import { t } from "@/lib/i18n";
 import { Button } from "@/elements/Button";
-import { Container } from "@/elements/Container";
 import { Link } from "@/elements/Link";
-import { GhlFooterSection } from "@/sections/GhlFooterSection";
 
-// Login page (ditto clone). UI only — not wired to Cognito yet.
+// Login page (original PRI auth): photo bg + blue gradient + wave + green button. UI only — not wired to Cognito yet.
 export default function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const particles = Array.from({ length: 28 }, (_, i) => ({
+    left: (i * 37) % 100,
+    top: (i * 53) % 100,
+    size: 3 + (i % 3) * 2,
+    delay: (i % 9) * 0.9,
+    duration: 7 + (i % 5),
+  }));
+
   return (
-    <section className="w-full bg-pri-bg-light py-16">
-      <Container size="form">
-        <div className="mx-auto max-w-md rounded-lg bg-white p-6 shadow-sm md:p-8">
+    <section className="relative min-h-screen w-full overflow-hidden">
+      {/* photo bg + gradient overlay */}
+      <div className="pri-auth-bg absolute inset-0 h-[380px] md:h-[420px]" aria-hidden />
+      <div className="pri-auth-overlay absolute inset-0 h-[380px] md:h-[420px]" aria-hidden />
+      {/* wave divider (original: viewBox 0 0 1440 120) */}
+      <div className="pointer-events-none absolute left-0 right-0 top-[340px] z-[1] md:top-[380px]" aria-hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" className="h-auto w-full">
+          <path
+            fill="#f3f6f9"
+            d="M 0,36 C 144,53.6 432,123.2 720,124 C 1008,124.8 1296,56.8 1440,40L1440 140L0 140z"
+          />
+        </svg>
+      </div>
+      {/* drifting particles */}
+      <div className="absolute inset-0 overflow-hidden" aria-hidden>
+        {particles.map((p, i) => (
+          <span
+            key={i}
+            className="pri-particle"
+            style={{
+              left: `${p.left}%`,
+              top: `${p.top}%`,
+              width: `${p.size}px`,
+              height: `${p.size}px`,
+              animationDelay: `${p.delay}s`,
+              animationDuration: `${p.duration}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="relative z-[2] flex min-h-screen flex-col items-center justify-center px-4 py-24">
+        <div className="w-full max-w-md rounded-lg bg-white p-6 shadow-lg md:p-8">
           <h1 className="text-center text-2xl font-bold text-pri-ink">
             {t("Auth.SignIn")}
           </h1>
@@ -60,7 +96,7 @@ export default function LoginPage() {
             <div className="mt-3 text-right">
               <Link
                 href="/reset-password"
-                className="text-sm text-pri-purple hover:underline"
+                className="text-sm text-pri-org-primary hover:underline"
               >
                 {t("Auth.ForgotPassword")}
               </Link>
@@ -68,14 +104,13 @@ export default function LoginPage() {
 
             <Button
               type="submit"
-              className="mt-6 w-full rounded bg-pri-purple px-6 py-2.5 text-sm font-semibold text-white hover:bg-pri-purple/90"
+              className="mt-6 w-full rounded bg-pri-org-green px-6 py-2.5 text-sm font-semibold text-white hover:bg-pri-org-green/90"
             >
               {t("Auth.SignIn")}
             </Button>
           </form>
         </div>
-      </Container>
-      <GhlFooterSection />
+      </div>
     </section>
   );
 }

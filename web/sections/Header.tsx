@@ -4,10 +4,10 @@ import { Link } from "@/elements/Link";
 import { Container } from "@/elements/Container";
 import { t } from "@/lib/i18n";
 
-// Common header: logo (→ home) + Login (→ /login).
+// Home header (powerrateindex.org): compact, 1px bottom border #e9ebec.
 export function Header() {
   return (
-    <header className="w-full bg-white py-3">
+    <header className="w-full border-b border-pri-org-header-border bg-white py-3">
       <Container className="flex min-h-[56px] items-center justify-between gap-3 md:min-h-[64px]">
         <Logo
           href="/"
@@ -18,10 +18,27 @@ export function Header() {
         />
         <Button
           asChild
-          className="shrink-0 rounded bg-pri-purple px-4 py-2 text-sm font-semibold text-white hover:bg-pri-purple/90 md:px-5"
+          className="shrink-0 rounded bg-pri-org-accent px-4 py-2 text-sm font-semibold text-white hover:bg-pri-org-accent/90 md:px-5"
         >
           <Link href="/login">{t("Header.Login")}</Link>
         </Button>
+      </Container>
+    </header>
+  );
+}
+
+// Inner pages header (GHL): 315px tall, logo 24px height, width auto.
+export function GhlHeader() {
+  return (
+    <header className="flex min-h-[315px] w-full items-start bg-white">
+      <Container className="flex items-start pt-6">
+        <Logo
+          href="/"
+          width={1406}
+          height={174}
+          className="h-[24px] w-auto"
+          priority
+        />
       </Container>
     </header>
   );

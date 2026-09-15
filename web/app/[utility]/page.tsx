@@ -7,6 +7,7 @@ import { RateComparisonSection } from "@/sections/RateComparisonSection";
 import { WhyItMattersSection } from "@/sections/WhyItMattersSection";
 import { TrialFormSection } from "@/sections/TrialFormSection";
 import { GhlFooterSection } from "@/sections/GhlFooterSection";
+import { GhlHeader } from "@/sections/Header";
 
 export function generateStaticParams(): { utility: string }[] {
   return getData().utilities.map((u) => ({ utility: u.slug }));
@@ -52,6 +53,7 @@ export default async function UtilityPage({
 
   return (
     <>
+      <GhlHeader />
       <HeroSection rateChange={rateChange} />
       <RateComparisonSection rateChange={rateChange} />
       <WhyItMattersSection

@@ -1,12 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Rubik } from "next/font/google";
 import { t } from "@/lib/i18n";
 import { AppConfig } from "@/config";
-import { Header } from "@/sections/Header";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
+  subsets: ["latin"],
+});
+
+// Original PowerRateIndex home uses Rubik.
+const rubik = Rubik({
+  variable: "--font-rubik",
   subsets: ["latin"],
 });
 
@@ -67,10 +72,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakartaSans.variable} h-full antialiased`}
+      className={`${plusJakartaSans.variable} ${rubik.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Header />
         <main className="flex flex-1 flex-col">{children}</main>
       </body>
     </html>

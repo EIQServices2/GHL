@@ -28,7 +28,7 @@ export function TrialFormSection() {
             <Button
               size="lg"
               onClick={() => setOpen(true)}
-              className="rounded-full bg-pri-purple px-5 py-4 text-sm font-bold uppercase tracking-[2px] text-white hover:bg-pri-purple/90 whitespace-normal text-center leading-snug sm:whitespace-nowrap"
+              className="pri-elevate-hover rounded-full bg-pri-purple px-5 py-4 text-sm font-bold uppercase tracking-[2px] text-white hover:bg-pri-purple/90 whitespace-normal text-center leading-snug sm:whitespace-nowrap"
             >
               {t("TrialForm.CTA")}
             </Button>

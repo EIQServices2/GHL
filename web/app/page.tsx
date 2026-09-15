@@ -8,6 +8,7 @@ import { HomePlatform } from "@/sections/HomePlatform";
 import { HomeContact } from "@/sections/HomeContact";
 import { UtilityLinksSection } from "@/sections/UtilityLinksSection";
 import { FooterSection } from "@/sections/FooterSection";
+import { Header } from "@/sections/Header";
 
 export const metadata: Metadata = {
   title: t("Meta.Title"),
@@ -18,7 +19,8 @@ export default function HomePage() {
   const { home, tduRates, utilities } = getData();
 
   return (
-    <>
+    <div className="font-[family-name:var(--font-rubik)]">
+      <Header />
       <HomeHero stats={home.stats} />
       <HomeScrape />
       <HomeFeatures cards={home.featureCards} />
@@ -26,6 +28,6 @@ export default function HomePage() {
       <HomeContact />
       <UtilityLinksSection utilities={utilities} />
       <FooterSection />
-    </>
+    </div>
   );
 }

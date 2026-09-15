@@ -22,11 +22,11 @@ export function HeroSection({ rateChange }: HeroSectionProps) {
         aria-hidden
       />
       <Container size="narrow" className="relative text-left">
-        <h1 className="text-3xl font-normal leading-[1.1] tracking-[-1px] text-white md:text-5xl">
+        <h1 className="pri-entrance text-3xl font-normal leading-[1.1] tracking-[-1px] text-white md:text-5xl">
           {title}{" "}
           <span className="text-pri-lavender">{t("Hero.SeeHow")}</span>
         </h1>
-        <p className="mt-4 max-w-xl text-lg leading-[1.5] text-white">
+        <p className="pri-entrance pri-entrance-1 mt-4 max-w-xl text-lg leading-[1.5] text-white">
           {subtitle}
         </p>
       </Container>
