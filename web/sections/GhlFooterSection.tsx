@@ -1,13 +1,14 @@
 import Image from "next/image";
 import { t } from "@/lib/i18n";
 import { Logo } from "@/components/Logo";
+import { Container } from "@/elements/Container";
 
 // Minimal GHL footer (inner pages): logo left, powered-by + text stacked below.
 // bg #F1F4FA, left aligned, no links.
 export function GhlFooterSection() {
   return (
     <footer className="w-full bg-[#F1F4FA] py-5 pb-8 text-[#252525]">
-      <div className="mx-auto w-full max-w-[80%]">
+      <Container size="ghl">
         <div className="pri-entrance flex flex-col items-start text-left">
           <Logo href="/" width={180} height={30} className="h-[30px] w-auto" />
           <Image
@@ -27,7 +28,7 @@ export function GhlFooterSection() {
             {t("Footer.Tagline2")}
           </p>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

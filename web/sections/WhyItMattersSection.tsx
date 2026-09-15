@@ -14,7 +14,7 @@ export function WhyItMattersSection({
 }: WhyItMattersSectionProps) {
   return (
     <section className="w-full py-12">
-      <Container size="narrow" className="grid grid-cols-1 gap-6 md:grid-cols-[2fr_3fr]">
+      <Container size="ghl" className="grid grid-cols-1 gap-6 md:grid-cols-[2fr_3fr]">
         <h2 className="pri-entrance text-3xl font-bold leading-[1.3] text-black md:text-[42px]">
           {t("WhyItMatter.Title")}
         </h2>

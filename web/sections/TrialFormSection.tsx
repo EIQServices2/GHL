@@ -14,7 +14,7 @@ export function TrialFormSection() {
 
   return (
     <section className="w-full bg-pri-navy py-[60px]">
-      <Container size="narrow">
+      <Container size="ghl">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-[3fr_2fr] md:items-center">
           <div className="text-left">
             <h2 className="pri-entrance text-sm font-normal uppercase leading-[2] tracking-[2px] text-pri-lavender">

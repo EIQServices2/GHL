@@ -1,4 +1,5 @@
 import { t } from "@/lib/i18n";
+import { Container } from "@/elements/Container";
 import { TrendingDown, TrendingUp } from "lucide-react";
 import type { RateChange } from "@/types";
 
@@ -29,7 +30,7 @@ export function RateComparisonSection({
 
   return (
     <section className="w-full py-12">
-      <div className="mx-auto w-full max-w-3xl px-6">
+      <Container size="ghl">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div className="pri-entrance text-left">
             <p className="font-[family-name:var(--font-plus-jakarta-sans)] text-[20px] font-semibold text-black">
@@ -56,7 +57,7 @@ export function RateComparisonSection({
             </p>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

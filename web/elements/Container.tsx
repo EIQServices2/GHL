@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 export interface ContainerProps {
   className?: string;
-  size?: "wide" | "narrow" | "form";
+  size?: "wide" | "narrow" | "form" | "ghl";
   children: React.ReactNode;
 }
 
@@ -20,6 +20,7 @@ export function Container({
         size === "narrow" && "max-w-3xl px-6",
         size === "form" && "max-w-2xl px-4",
         size === "wide" && "max-w-[1440px] px-4",
+        size === "ghl" && "max-w-[1170px] px-6",
         className
       )}
     >

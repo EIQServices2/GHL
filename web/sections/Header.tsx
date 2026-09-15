@@ -27,11 +27,11 @@ export function Header() {
   );
 }
 
-// Inner pages header (GHL eiqdigital.info): fixed, white 90% (transparent), z-99, shadow, 10px 0 padding.
+// Inner pages header (GHL eiqdigital.info): fixed, white 90% (transparent), 72px tall, z-99, shadow, 10px 0 padding.
 export function GhlHeader() {
   return (
-    <header className="ghl-header-shadow fixed top-0 z-[99] w-full bg-[#FFFFFFE6] py-[10px]">
-      <Container className="flex items-center">
+    <header className="ghl-header-shadow fixed top-0 z-[99] flex h-[72px] w-full items-center bg-[#FFFFFFE6]">
+      <Container size="ghl" className="flex items-center">
         <Logo
           href="/"
           width={1406}
