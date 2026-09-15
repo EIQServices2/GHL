@@ -32,7 +32,7 @@ export function RateComparisonSection({
       <div className="mx-auto w-full max-w-3xl px-6">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div className="pri-entrance text-left">
-            <p className="text-[20px] text-black">
+            <p className="font-[family-name:var(--font-plus-jakarta-sans)] text-[20px] font-semibold text-black">
               {t("RateComparison.PreviousRate")}
             </p>
             <p className="mt-2 text-3xl font-bold leading-tight text-pri-footer-text md:text-[44px]">
@@ -40,7 +40,7 @@ export function RateComparisonSection({
             </p>
           </div>
           <div className="pri-entrance pri-entrance-1 text-left">
-            <p className="text-[20px] text-black">
+            <p className="font-[family-name:var(--font-plus-jakarta-sans)] text-[20px] font-semibold text-black">
               {`${t("RateComparison.UpdatedAsOf")} ${formatDate(rateChange.updatedAsOf)}`}
             </p>
             <p className="mt-2 flex items-center gap-3 text-3xl font-bold leading-tight text-pri-purple md:text-[44px]">

@@ -27,11 +27,11 @@ export function Header() {
   );
 }
 
-// Inner pages header (GHL): 315px tall, logo 24px height, width auto.
+// Inner pages header (GHL eiqdigital.info): shadow bar, 10px 0 padding, logo scales with width, no fixed height.
 export function GhlHeader() {
   return (
-    <header className="flex min-h-[315px] w-full items-start bg-white">
-      <Container className="flex items-start pt-6">
+    <header className="w-full bg-white py-[10px] shadow-[0_1px_3px_0_rgba(3,0,71,0.09)]">
+      <Container className="flex items-center">
         <Logo
           href="/"
           width={1406}
