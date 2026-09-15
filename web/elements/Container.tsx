@@ -20,7 +20,7 @@ export function Container({
         size === "narrow" && "max-w-3xl px-6",
         size === "form" && "max-w-2xl px-4",
         size === "wide" && "max-w-[1440px] px-4",
-        size === "ghl" && "max-w-[1170px] px-6",
+        size === "ghl" && "max-w-[1170px] px-[6px] max-md:px-5",
         className
       )}
     >
