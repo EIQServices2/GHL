@@ -27,10 +27,10 @@ export function Header() {
   );
 }
 
-// Inner pages header (GHL eiqdigital.info): shadow bar, 10px 0 padding, logo scales with width, no fixed height.
+// Inner pages header (GHL eiqdigital.info): fixed, white 90% (transparent), z-99, shadow, 10px 0 padding.
 export function GhlHeader() {
   return (
-    <header className="w-full bg-white py-[10px] shadow-[0_1px_3px_0_rgba(3,0,71,0.09)]">
+    <header className="ghl-header-shadow fixed top-0 z-[99] w-full bg-[#FFFFFFE6] py-[10px]">
       <Container className="flex items-center">
         <Logo
           href="/"

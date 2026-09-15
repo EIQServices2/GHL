@@ -155,6 +155,11 @@
   }
 }
 
+/* GHL inner header shadow (reference: 0 1px 3px 0 rgba(3,0,71,0.09)) */
+.ghl-header-shadow {
+  box-shadow: 0 1px 3px 0 rgba(3, 0, 71, 0.09);
+}
+
 .pri-entrance {
   opacity: 0;
   animation: pri-fade-in-up 0.7s ease-out forwards;

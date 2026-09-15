@@ -6,14 +6,15 @@ export interface HeroSectionProps {
   rateChange: RateChange;
 }
 
-// Utility hero (GHL eiqdigital.info): photo bg 100%-width top-anchored, H1 48px/wt-500 with wt-700 span, P 20px #8893a8.
+// Utility hero (GHL eiqdigital.info): photo bg 100%-width top-anchored, H1 48px/wt-500 + wt-700 span, P 20px #8893a8.
+// pt-[71px] compensates the fixed transparent header (header height = 10px pad ×2 + 24px logo + shadow ≈ 44-71px).
 export function HeroSection({ rateChange }: HeroSectionProps) {
   const o = rateChange.overrides;
   const title = o?.heroTitle ?? `${rateChange.utility.name} ${t("Hero.Title")}.`;
   const subtitle = o?.heroSubtitle ?? t("Hero.Subtitle");
 
   return (
-    <section className="relative w-full overflow-hidden bg-pri-navy pt-[60px] pb-[80px]">
+    <section className="relative mt-[44px] w-full overflow-hidden bg-pri-navy pt-[60px] pb-[80px]">
       {/* bg image: 100% auto, top-anchored, no-repeat (GHL bgCover100) */}
       <div
         className="absolute inset-0 bg-no-repeat bg-top bg-[length:100%_auto]"

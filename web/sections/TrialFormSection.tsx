@@ -17,14 +17,14 @@ export function TrialFormSection() {
       <Container size="narrow">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-[3fr_2fr] md:items-center">
           <div className="text-left">
-            <h2 className="text-sm font-normal uppercase leading-[2] tracking-[2px] text-pri-lavender">
+            <h2 className="pri-entrance text-sm font-normal uppercase leading-[2] tracking-[2px] text-pri-lavender">
               {t("TrialForm.ExperienceFree")}
             </h2>
-            <h3 className="mt-2 text-3xl font-bold leading-[1.2] tracking-[-1px] text-white md:text-5xl">
+            <h3 className="pri-entrance pri-entrance-1 mt-2 text-3xl font-bold leading-[1.2] tracking-[-1px] text-white md:text-5xl">
               {t("TrialForm.StartMonitoring")}
             </h3>
           </div>
-          <div className="flex justify-center md:justify-end">
+          <div className="pri-entrance pri-entrance-2 flex justify-center md:justify-end">
             <Button
               size="lg"
               onClick={() => setOpen(true)}
@@ -35,7 +35,7 @@ export function TrialFormSection() {
           </div>
         </div>
 
-        <div className="mt-5 flex justify-center">
+        <div className="pri-entrance pri-entrance-3 mt-5 flex justify-center">
           <Image
             src="/images/dashboard-screenshot.png"
             alt="PowerRateIndex dashboard"
