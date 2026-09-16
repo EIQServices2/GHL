@@ -13,7 +13,7 @@ export function GhlFooterSection() {
           {/* left col: logo + rights */}
           <div className="flex flex-col justify-between md:w-[62.3%]">
             <Logo href="/" width={180} height={30} className="h-auto w-[180px]" />
-            <p className="pri-entrance pri-entrance-1 mt-8 text-[16px] font-normal text-black">
+            <p className="pri-entrance pri-entrance-1 mt-8 text-[16px] font-normal text-[#3d3d3d]/50">
               {t("Footer.Rights")}
             </p>
           </div>
@@ -26,7 +26,7 @@ export function GhlFooterSection() {
               height={54}
               className="pri-entrance pri-entrance-1 h-auto w-[164px]"
             />
-            <p className="pri-entrance pri-entrance-2 mt-5 text-[16px] font-normal leading-[1.3] text-black/50">
+            <p className="pri-entrance pri-entrance-2 mt-5 text-[16px] font-normal leading-[1.3] text-[#252525]">
               {t("Footer.Tagline1")}
               <br />
               {t("Footer.Tagline2")}
